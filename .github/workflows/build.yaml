@@ -38,4 +38,5 @@ jobs:
           git config --global user.email "github@salko-ua.de"
           git config --global user.name "salko-ua"
           git commit -m "Updated README" -a || echo "No changes to commit"
-          git push
+          git pull
+          git push -f
