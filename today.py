@@ -431,6 +431,7 @@ def main():
     print('Calculation times:')
     user_data = stats.user_getter()
     owner_id, acc_date = user_data
+    stats.owner_id = owner_id
     print(user_data)
 
     age_data = stats.get_age()
