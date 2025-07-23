@@ -78,7 +78,7 @@
 
 <tspan x="150" y="70" class="cc">. </tspan>
 <tspan class="key">Uptime</tspan>:
-<tspan class="cc" id="age_data_dots"> . </tspan>
+<tspan class="cc" id="age_data_dots"> ....................... </tspan>
 <tspan class="value" id="age_data">19 years, 3 months, 25 days</tspan>
 
 <tspan x="150" y="90" class="cc">. </tspan>
@@ -167,7 +167,7 @@
 <tspan class="cc" id="repo_data_dots"> ........ </tspan>
 <tspan class="value" id="repo_data">12</tspan> {
 <tspan class="key">Contributed</tspan>:
-<tspan class="value" id="contrib_data">20</tspan>} |
+<tspan class="value" id="contrib_data">15</tspan>} |
 <tspan class="key">Stars</tspan>:
 <tspan class="cc" id="star_data_dots"> ......... </tspan>
 <tspan class="value" id="star_data">8</tspan>
@@ -175,7 +175,7 @@
 <tspan x="150" y="490" class="cc">. </tspan>
 <tspan class="key">Commmits</tspan>:
 <tspan class="cc" id="commit_data_dots"> ............................................... </tspan>
-<tspan class="value" id="commit_data">995</tspan> |
+<tspan class="value" id="commit_data">997</tspan> |
 <tspan class="key">Followers</tspan>:
 <tspan class="cc" id="follower_data_dots"> ......... </tspan>
 <tspan class="value" id="follower_data">7</tspan>
@@ -183,11 +183,11 @@
 <tspan x="150" y="510" class="cc">. </tspan>
 <tspan class="key">Lines of Code on GitHub</tspan>:
 <tspan class="cc" id="loc_data_dots"> .... </tspan>
-<tspan class="value" id="loc_data">37,099</tspan> (
-<tspan class="addColor" id="loc_add">83,146</tspan>
+<tspan class="value" id="loc_data">37,118</tspan> (
+<tspan class="addColor" id="loc_add">83,756</tspan>
 <tspan class="addColor">++</tspan>,
 <tspan id="loc_del_dots"> .... </tspan>
-<tspan class="delColor" id="loc_del">46,047</tspan>
+<tspan class="delColor" id="loc_del">46,638</tspan>
 <tspan class="delColor">--</tspan>
 </text>
 </svg>
