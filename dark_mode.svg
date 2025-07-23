@@ -9,7 +9,7 @@
     size-adjust: 109%;
   }
   .key {
-    fill: #ffa657;
+    fill:rgb(255, 87, 87);
   }
   .value {
     fill: #a5d6ff;
@@ -71,92 +71,84 @@
 <text x="150" y="30" fill="#c9d1d9">
 <tspan x="150" y="30">salko-ua</tspan> -———————————————————————————————————————————-—-
 
-<tspan x="150" y="50" class="cc"> . </tspan>
+<tspan x="150" y="50" class="cc">. </tspan>
 <tspan class="key">OS</tspan>:
-<tspan class="cc" id="operation_system_dots"> . </tspan>
-<tspan class="value" id="operation_system">Linux (NixOS 25.05)</tspan>
+<tspan class="cc"> .................. </tspan>
+<tspan class="value" id="operation_system">Linux (NixOS 25.11), Pixel 6</tspan>
 
 <tspan x="150" y="70" class="cc">. </tspan>
 <tspan class="key">Uptime</tspan>:
-<tspan class="cc" id="age_data_dots"> ....................... </tspan>
+<tspan class="cc"> ............... </tspan>
 <tspan class="value" id="age_data">19 years, 3 months, 25 days</tspan>
 
 <tspan x="150" y="90" class="cc">. </tspan>
 <tspan class="key">Host</tspan>:
-<tspan class="cc"> . </tspan>
-<tspan class="value">LLC Lutsk Agrarian Company</tspan>
+<tspan class="cc"> ............................. </tspan>
+<tspan class="value">Europe, Ukraine</tspan>
 
 <tspan x="150" y="110" class="cc">. </tspan>
 <tspan class="key">Kernel</tspan>:
-<tspan class="cc"> . </tspan>
-<tspan class="value">Consolidated Information Analyst</tspan>
+<tspan class="cc"> .............................. </tspan>
+<tspan class="value">Volyn, Lutsk</tspan>
 
 <tspan x="150" y="130" class="cc">. </tspan>
 <tspan class="key">IDE</tspan>:
-<tspan class="cc"> . </tspan>
-<tspan class="value">nvim version 0.11.2</tspan>
+<tspan class="cc"> ............................ </tspan>
+<tspan class="value">Lazy nvim v0.11.2</tspan>
 
 <tspan x="150" y="150" class="cc">. </tspan>
 
 <tspan x="150" y="170" class="cc">. </tspan>
-<tspan class="key">Languages</tspan>.
-<tspan class="key">Programming</tspan>:
+<tspan class="key">Languages</tspan>.<tspan class="key">Programming</tspan>:
 <tspan class="cc"> . </tspan>
 <tspan class="value">Python, JavaScript</tspan>
 
 <tspan x="150" y="190" class="cc">. </tspan>
-<tspan class="key">Languages</tspan>.
-<tspan class="key">Computer</tspan>:
+<tspan class="key">Languages</tspan>.<tspan class="key">Computer</tspan>:
 <tspan class="cc"> . </tspan>
 <tspan class="value">HTML, CSS, JSON, YAML</tspan>
 
 <tspan x="150" y="210" class="cc">. </tspan>
-<tspan class="key">Languages</tspan>.
-<tspan class="key">Real</tspan>:
+<tspan class="key">Languages</tspan>.<tspan class="key">Real</tspan>:
 <tspan class="cc"> . </tspan>
 <tspan class="value">Ukranina, English</tspan>
 
 <tspan x="150" y="230" class="cc">. </tspan>
 
 <tspan x="150" y="250" class="cc">. </tspan>
-<tspan class="key">Hobbies</tspan>.
-<tspan class="key">Software</tspan>:
+<tspan class="key">Hobbies</tspan>.<tspan class="key">Software</tspan>:
 <tspan class="cc"> . </tspan>
 <tspan class="value">Private pet projects</tspan>
 
 <tspan x="150" y="270" class="cc">. </tspan>
-<tspan class="key">Hobbies</tspan>.
-<tspan class="key">Games</tspan>:
+<tspan class="key">Hobbies</tspan>.<tspan class="key">Games</tspan>:
 <tspan class="cc"> . </tspan>
 <tspan class="value">Collecting games</tspan>
 
 <tspan x="150" y="310">- Contact</tspan> -——————————————————————————————————————————————-—-
 
 <tspan x="150" y="330" class="cc">. </tspan>
-<tspan class="key">Email</tspan>.
-<tspan class="key">Personal</tspan>:
+<tspan class="key">Email</tspan>.<tspan class="key">Gmail</tspan>:
 <tspan class="cc"> . </tspan>
 <tspan class="value">salo.lard.tocino@gmail.com</tspan>
 
 <tspan x="150" y="350" class="cc">. </tspan>
-<tspan class="key">Email</tspan>.
-<tspan class="key">Personal</tspan>:
+<tspan class="key">Email</tspan>.<tspan class="key">Me</tspan>:
 <tspan class="cc"> . </tspan>
 <tspan class="value">me@salko-ua.de</tspan>
 
 <tspan x="150" y="370" class="cc">. </tspan>
-<tspan class="key">Email</tspan>.
-<tspan class="key">Work</tspan>:
+<tspan class="key">Email</tspan>.<tspan class="key">Work</tspan>:
 <tspan class="cc"> . </tspan>
-<tspan class="value">d.musaiev@volynska.com</tspan>
+<tspan class="value">work@salko-ua.de</tspan>
 
 <tspan x="150" y="390" class="cc">. </tspan>
-<tspan class="key">LinkedIn</tspan>:
+<tspan class="key">Social</tspan>.<tspan class="key">Site</tspan>:
 <tspan class="cc"> . </tspan>
-<tspan class="value">Dzhamil Musaiev</tspan>
+<tspan class="value">salko-ua.de</tspan>
 
 <tspan x="150" y="410" class="cc">. </tspan>
-<tspan class="key">Discord</tspan>:
+<tspan class="key">Social</tspan>.<tspan class="key">Discord</tspan>:
 <tspan class="cc"> . </tspan>
 <tspan class="value">salkoua</tspan>
 
@@ -164,30 +156,28 @@
 
 <tspan x="150" y="470" class="cc">. </tspan>
 <tspan class="key">Repos</tspan>:
-<tspan class="cc" id="repo_data_dots"> ........ </tspan>
-<tspan class="value" id="repo_data">12</tspan> {
-<tspan class="key">Contributed</tspan>:
-<tspan class="value" id="contrib_data">15</tspan>} |
+<tspan class="cc"> .................. </tspan>
+<tspan class="value" id="repo_data">12</tspan> |
 <tspan class="key">Stars</tspan>:
-<tspan class="cc" id="star_data_dots"> ......... </tspan>
+<tspan class="cc"> ............. </tspan>
 <tspan class="value" id="star_data">8</tspan>
 
 <tspan x="150" y="490" class="cc">. </tspan>
 <tspan class="key">Commmits</tspan>:
-<tspan class="cc" id="commit_data_dots"> ............................................... </tspan>
+<tspan class="cc"> .............. </tspan>
 <tspan class="value" id="commit_data">999</tspan> |
 <tspan class="key">Followers</tspan>:
-<tspan class="cc" id="follower_data_dots"> ......... </tspan>
+<tspan class="cc"> ......... </tspan>
 <tspan class="value" id="follower_data">7</tspan>
 
 <tspan x="150" y="510" class="cc">. </tspan>
-<tspan class="key">Lines of Code on GitHub</tspan>:
-<tspan class="cc" id="loc_data_dots"> .... </tspan>
+<tspan class="key">Lines of Code</tspan>:
+<tspan class="cc"> . </tspan>
 <tspan class="value" id="loc_data">37,118</tspan> (
 <tspan class="addColor" id="loc_add">83,784</tspan>
 <tspan class="addColor">++</tspan>,
-<tspan id="loc_del_dots"> .... </tspan>
+<tspan> .... </tspan>
 <tspan class="delColor" id="loc_del">46,666</tspan>
-<tspan class="delColor">--</tspan>
+<tspan class="delColor">--</tspan> )
 </text>
 </svg>
