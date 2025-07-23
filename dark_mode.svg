@@ -39,33 +39,33 @@
 <tspan id="letter_s" x="15" y="30"> ░██████╗</tspan>
 <tspan id="letter_s" x="15" y="51"> ██╔════╝</tspan>
 <tspan id="letter_s" x="15" y="72"> ╚█████╗░</tspan>
-<tspan id="letter_s" x="15" y="93">  ░╚═══██╗</tspan>
+<tspan id="letter_s" x="15" y="93"> ░╚═══██╗</tspan>
 <tspan id="letter_s" x="15" y="114">╚██████╔╝</tspan>
 <tspan id="letter_s" x="15" y="135">  ═════╝░</tspan>
 
 <!-- A -->
-<tspan id="letter_a" x="15" y="156"> █████╗░</tspan>
-<tspan id="letter_a" x="15" y="177">██╔══██╗</tspan>
-<tspan id="letter_a" x="15" y="198">███████║</tspan>
-<tspan id="letter_a" x="15" y="219">██╔══██║</tspan>
-<tspan id="letter_a" x="15" y="240">██║░░██║</tspan>
-<tspan id="letter_a" x="15" y="261">╚═╝  ╚═╝</tspan>
+<tspan id="letter_a" x="15" y="156">  █████╗░</tspan>
+<tspan id="letter_a" x="15" y="177"> ██╔══██╗</tspan>
+<tspan id="letter_a" x="15" y="198"> ███████║</tspan>
+<tspan id="letter_a" x="15" y="219"> ██╔══██║</tspan>
+<tspan id="letter_a" x="15" y="240"> ██║░░██║</tspan>
+<tspan id="letter_a" x="15" y="261"> ╚═╝  ╚═╝</tspan>
 
 <!-- L -->
-<tspan id="letter_l" x="15" y="282">██╗░░░░░</tspan>
-<tspan id="letter_l" x="15" y="303">██║░░░░░</tspan>
-<tspan id="letter_l" x="15" y="324">██║░░░░░</tspan>
-<tspan id="letter_l" x="15" y="345">██║░░░░░</tspan>
-<tspan id="letter_l" x="15" y="366">███████╗</tspan>
-<tspan id="letter_l" x="15" y="387">╚══════╝</tspan>
+<tspan id="letter_l" x="15" y="282"> ██╗░░░░░</tspan>
+<tspan id="letter_l" x="15" y="303"> ██║░░░░░</tspan>
+<tspan id="letter_l" x="15" y="324"> ██║░░░░░</tspan>
+<tspan id="letter_l" x="15" y="345"> ██║░░░░░</tspan>
+<tspan id="letter_l" x="15" y="366"> ███████╗</tspan>
+<tspan id="letter_l" x="15" y="387"> ╚══════╝</tspan>
 
 <!-- O -->
-<tspan id="letter_o" x="15" y="408"> █████╗░</tspan>
-<tspan id="letter_o" x="15" y="429">██╔══██╗</tspan>
-<tspan id="letter_o" x="15" y="450">██║░░██║</tspan>
-<tspan id="letter_o" x="15" y="471">██║░░██║</tspan>
-<tspan id="letter_o" x="15" y="492">╚█████╔╝</tspan>
-<tspan id="letter_o" x="15" y="513">░╚════╝░</tspan>
+<tspan id="letter_o" x="15" y="408">  █████╗░</tspan>
+<tspan id="letter_o" x="15" y="429"> ██╔══██╗</tspan>
+<tspan id="letter_o" x="15" y="450"> ██║░░██║</tspan>
+<tspan id="letter_o" x="15" y="471"> ██║░░██║</tspan>
+<tspan id="letter_o" x="15" y="492"> ╚█████╔╝</tspan>
+<tspan id="letter_o" x="15" y="513"> ░╚════╝░</tspan>
 </text>
 
 <text x="150" y="30" fill="#c9d1d9">
