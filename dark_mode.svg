@@ -34,127 +34,127 @@
   }
   </style>
 <rect width="985px" height="530px" fill="#161b22" rx="15"/>
-<text x="15" y="30" fill="#c9d1d9" class="ascii">
+<text x="160" y="30" fill="#c9d1d9" class="ascii">
 <!-- S -->
-<tspan id="letter_s" x="15" y="30"> ░██████╗</tspan>
-<tspan id="letter_s" x="15" y="51"> ██╔════╝</tspan>
-<tspan id="letter_s" x="15" y="72"> ╚█████╗░</tspan>
-<tspan id="letter_s" x="15" y="93"> ░╚═══██╗</tspan>
-<tspan id="letter_s" x="15" y="114">╚██████╔╝</tspan>
-<tspan id="letter_s" x="15" y="135">  ═════╝░</tspan>
+<tspan id="letter_s" x="160" y="30"> ░██████╗</tspan>
+<tspan id="letter_s" x="160" y="51"> ██╔════╝</tspan>
+<tspan id="letter_s" x="160" y="72"> ╚█████╗░</tspan>
+<tspan id="letter_s" x="160" y="93"> ░╚═══██╗</tspan>
+<tspan id="letter_s" x="160" y="114">╚██████╔╝</tspan>
+<tspan id="letter_s" x="160" y="135">  ═════╝░</tspan>
 
 <!-- A -->
-<tspan id="letter_a" x="15" y="156">  █████╗░</tspan>
-<tspan id="letter_a" x="15" y="177"> ██╔══██╗</tspan>
-<tspan id="letter_a" x="15" y="198"> ███████║</tspan>
-<tspan id="letter_a" x="15" y="219"> ██╔══██║</tspan>
-<tspan id="letter_a" x="15" y="240"> ██║░░██║</tspan>
-<tspan id="letter_a" x="15" y="261"> ╚═╝  ╚═╝</tspan>
+<tspan id="letter_a" x="160" y="156">  █████╗░</tspan>
+<tspan id="letter_a" x="160" y="177"> ██╔══██╗</tspan>
+<tspan id="letter_a" x="160" y="198"> ███████║</tspan>
+<tspan id="letter_a" x="160" y="219"> ██╔══██║</tspan>
+<tspan id="letter_a" x="160" y="240"> ██║░░██║</tspan>
+<tspan id="letter_a" x="160" y="261"> ╚═╝  ╚═╝</tspan>
 
 <!-- L -->
-<tspan id="letter_l" x="15" y="282"> ██╗░░░░░</tspan>
-<tspan id="letter_l" x="15" y="303"> ██║░░░░░</tspan>
-<tspan id="letter_l" x="15" y="324"> ██║░░░░░</tspan>
-<tspan id="letter_l" x="15" y="345"> ██║░░░░░</tspan>
-<tspan id="letter_l" x="15" y="366"> ███████╗</tspan>
-<tspan id="letter_l" x="15" y="387"> ╚══════╝</tspan>
+<tspan id="letter_l" x="160" y="282"> ██╗░░░░░</tspan>
+<tspan id="letter_l" x="160" y="303"> ██║░░░░░</tspan>
+<tspan id="letter_l" x="160" y="324"> ██║░░░░░</tspan>
+<tspan id="letter_l" x="160" y="345"> ██║░░░░░</tspan>
+<tspan id="letter_l" x="160" y="366"> ███████╗</tspan>
+<tspan id="letter_l" x="160" y="387"> ╚══════╝</tspan>
 
 <!-- O -->
-<tspan id="letter_o" x="15" y="408">  █████╗░</tspan>
-<tspan id="letter_o" x="15" y="429"> ██╔══██╗</tspan>
-<tspan id="letter_o" x="15" y="450"> ██║░░██║</tspan>
-<tspan id="letter_o" x="15" y="471"> ██║░░██║</tspan>
-<tspan id="letter_o" x="15" y="492"> ╚█████╔╝</tspan>
-<tspan id="letter_o" x="15" y="513"> ░╚════╝░</tspan>
+<tspan id="letter_o" x="160" y="408">  █████╗░</tspan>
+<tspan id="letter_o" x="160" y="429"> ██╔══██╗</tspan>
+<tspan id="letter_o" x="160" y="450"> ██║░░██║</tspan>
+<tspan id="letter_o" x="160" y="471"> ██║░░██║</tspan>
+<tspan id="letter_o" x="160" y="492"> ╚█████╔╝</tspan>
+<tspan id="letter_o" x="160" y="513"> ░╚════╝░</tspan>
 </text>
 
-<text x="150" y="30" fill="#c9d1d9">
-<tspan x="150" y="30">salko-ua</tspan> -———————————————————————————————————————————-—-
+<text x="400" y="30" fill="#c9d1d9">
+<tspan x="400" y="30">salko-ua</tspan> -———————————————————————————————————————————-—-
 
-<tspan x="150" y="50" class="cc">. </tspan>
+<tspan x="400" y="50" class="cc">. </tspan>
 <tspan class="key">OS</tspan>:
 <tspan class="cc"> .................. </tspan>
 <tspan class="value" id="operation_system">Linux (NixOS 25.11), Pixel 6</tspan>
 
-<tspan x="150" y="70" class="cc">. </tspan>
+<tspan x="400" y="70" class="cc">. </tspan>
 <tspan class="key">Uptime</tspan>:
 <tspan class="cc"> ............... </tspan>
 <tspan class="value" id="age_data">19 years, 3 months, 26 days</tspan>
 
-<tspan x="150" y="90" class="cc">. </tspan>
+<tspan x="400" y="90" class="cc">. </tspan>
 <tspan class="key">Host</tspan>:
 <tspan class="cc"> ............................. </tspan>
 <tspan class="value">Europe, Ukraine</tspan>
 
-<tspan x="150" y="110" class="cc">. </tspan>
+<tspan x="400" y="110" class="cc">. </tspan>
 <tspan class="key">Kernel</tspan>:
 <tspan class="cc"> .............................. </tspan>
 <tspan class="value">Volyn, Lutsk</tspan>
 
-<tspan x="150" y="130" class="cc">. </tspan>
+<tspan x="400" y="130" class="cc">. </tspan>
 <tspan class="key">IDE</tspan>:
 <tspan class="cc"> ............................ </tspan>
 <tspan class="value">Lazy nvim v0.11.2</tspan>
 
-<tspan x="150" y="150" class="cc">. </tspan>
+<tspan x="400" y="150" class="cc">. </tspan>
 
-<tspan x="150" y="170" class="cc">. </tspan>
+<tspan x="400" y="170" class="cc">. </tspan>
 <tspan class="key">Languages</tspan>.<tspan class="key">Programming</tspan>:
 <tspan class="cc"> ......... </tspan>
 <tspan class="value">Python, JavaScript</tspan>
 
-<tspan x="150" y="190" class="cc">. </tspan>
+<tspan x="400" y="190" class="cc">. </tspan>
 <tspan class="key">Languages</tspan>.<tspan class="key">Computer</tspan>:
 <tspan class="cc"> ......... </tspan>
 <tspan class="value">HTML, CSS, JSON, YAML</tspan>
 
-<tspan x="150" y="210" class="cc">. </tspan>
+<tspan x="400" y="210" class="cc">. </tspan>
 <tspan class="key">Languages</tspan>.<tspan class="key">Real</tspan>:
 <tspan class="cc"> ................. </tspan>
 <tspan class="value">Ukranina, English</tspan>
 
-<tspan x="150" y="230" class="cc">. </tspan>
+<tspan x="400" y="230" class="cc">. </tspan>
 
-<tspan x="150" y="250" class="cc">. </tspan>
+<tspan x="400" y="250" class="cc">. </tspan>
 <tspan class="key">Hobbies</tspan>.<tspan class="key">Software</tspan>:
 <tspan class="cc"> ............ </tspan>
 <tspan class="value">Private pet projects</tspan>
 
-<tspan x="150" y="270" class="cc">. </tspan>
+<tspan x="400" y="270" class="cc">. </tspan>
 <tspan class="key">Hobbies</tspan>.<tspan class="key">Games</tspan>:
 <tspan class="cc"> ................... </tspan>
 <tspan class="value">Collecting games</tspan>
 
-<tspan x="150" y="310">- Contact</tspan> -——————————————————————————————————————————————-—-
+<tspan x="400" y="310">- Contact</tspan> -——————————————————————————————————————————————-—-
 
-<tspan x="150" y="330" class="cc">. </tspan>
+<tspan x="400" y="330" class="cc">. </tspan>
 <tspan class="key">Email</tspan>.<tspan class="key">Gmail</tspan>:
 <tspan class="cc"> ........... </tspan>
 <tspan class="value">salo.lard.tocino@gmail.com</tspan>
 
-<tspan x="150" y="350" class="cc">. </tspan>
+<tspan x="400" y="350" class="cc">. </tspan>
 <tspan class="key">Email</tspan>.<tspan class="key">Me</tspan>:
 <tspan class="cc"> .......................... </tspan>
 <tspan class="value">me@salko-ua.de</tspan>
 
-<tspan x="150" y="370" class="cc">. </tspan>
+<tspan x="400" y="370" class="cc">. </tspan>
 <tspan class="key">Email</tspan>.<tspan class="key">Work</tspan>:
 <tspan class="cc"> ...................... </tspan>
 <tspan class="value">work@salko-ua.de</tspan>
 
-<tspan x="150" y="390" class="cc">. </tspan>
+<tspan x="400" y="390" class="cc">. </tspan>
 <tspan class="key">Social</tspan>.<tspan class="key">Site</tspan>:
 <tspan class="cc"> .......................... </tspan>
 <tspan class="value">salko-ua.de</tspan>
 
-<tspan x="150" y="410" class="cc">. </tspan>
+<tspan x="400" y="410" class="cc">. </tspan>
 <tspan class="key">Social</tspan>.<tspan class="key">Discord</tspan>:
 <tspan class="cc"> ........................... </tspan>
 <tspan class="value">salkoua</tspan>
 
-<tspan x="150" y="450">- GitHub Stats</tspan> -—————————————————————————————————————————-—-
+<tspan x="400" y="450">- GitHub Stats</tspan> -—————————————————————————————————————————-—-
 
-<tspan x="150" y="470" class="cc">. </tspan>
+<tspan x="400" y="470" class="cc">. </tspan>
 <tspan class="key">Repos</tspan>:
 <tspan class="cc"> ................ </tspan>
 <tspan class="value" id="repo_data">12</tspan> |
@@ -162,7 +162,7 @@
 <tspan class="cc"> ............. </tspan>
 <tspan class="value" id="star_data">8</tspan>
 
-<tspan x="150" y="490" class="cc">. </tspan>
+<tspan x="400" y="490" class="cc">. </tspan>
 <tspan class="key">Commmits</tspan>:
 <tspan class="cc"> .......... </tspan>
 <tspan class="value" id="commit_data">1,004</tspan> |
@@ -170,7 +170,7 @@
 <tspan class="cc"> ......... </tspan>
 <tspan class="value" id="follower_data">7</tspan>
 
-<tspan x="150" y="510" class="cc">. </tspan>
+<tspan x="400" y="510" class="cc">. </tspan>
 <tspan class="key">Lines</tspan>:
 <tspan class="cc"> .,,,,,, </tspan>
 <tspan class="value" id="loc_data">37,108</tspan> (
