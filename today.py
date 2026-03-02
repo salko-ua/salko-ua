@@ -100,6 +100,7 @@ class Stats:
         request = self.request_wrapper(self.graph_repos_stars.__name__, query, variables)
         if request.status_code == 200:
             if count_type == 'repos':
+                print(request.json())
                 return request.json()['data']['user']['repositories']['totalCount']
             elif count_type == 'stars':
                 return self.stars_counter(request.json()['data']['user']['repositories']['edges'])
@@ -461,5 +462,6 @@ def main():
     for funct_name, count in stats.query_count.items(): print('{:<28}'.format('   ' + funct_name + ':'), '{:>6}'.format(count))
 
 main()
+
 
 
