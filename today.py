@@ -441,8 +441,8 @@ def main():
     print(total_loc)
 
     commit_data = stats.commit_counter(7)
-    star_data = stats.graph_repos_stars('stars', ['OWNER'])
-    repo_data =  stats.graph_repos_stars('repos', ['OWNER'])
+    star_data = stats.graph_repos_stars('stars', ['OWNER', 'COLLABORATOR'])
+    repo_data =  stats.graph_repos_stars('repos', ['OWNER', 'COLLABORATOR'])
     contrib_data =  stats.graph_repos_stars('repos', ['OWNER', 'COLLABORATOR', 'ORGANIZATION_MEMBER'])
     follower_data =  stats.follower_getter()
 
@@ -461,3 +461,4 @@ def main():
     for funct_name, count in stats.query_count.items(): print('{:<28}'.format('   ' + funct_name + ':'), '{:>6}'.format(count))
 
 main()
+
