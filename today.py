@@ -438,7 +438,7 @@ def main():
     age_data = stats.get_age()
     print(age_data)
 
-    total_loc = stats.loc_query(['OWNER'], 7)
+    total_loc = stats.loc_query(['OWNER', 'COLLABORATOR', "ORGANIZATION_MEMBER"], 7)
     print(total_loc)
 
     commit_data = stats.commit_counter(7)
@@ -462,6 +462,7 @@ def main():
     for funct_name, count in stats.query_count.items(): print('{:<28}'.format('   ' + funct_name + ':'), '{:>6}'.format(count))
 
 main()
+
 
 
 
