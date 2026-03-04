@@ -100,11 +100,11 @@
 
 <tspan x="400" y="450">- GitHub Stats</tspan> -—————————————————————————————————————-—-
 
-<tspan x="400" y="470" class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc"> ................ </tspan><tspan class="value" id="repo_data">62</tspan> |<tspan class="key">Stars</tspan>:<tspan class="cc"> ............. </tspan><tspan class="value" id="star_data">7</tspan>
+<tspan x="400" y="470" class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc"> ................ </tspan><tspan class="value" id="repo_data">62</tspan> | <tspan class="key">Stars</tspan>:<tspan class="cc"> ............. </tspan><tspan class="value" id="star_data">7</tspan>
 
-<tspan x="400" y="490" class="cc">. </tspan><tspan class="key">Commits</tspan>:<tspan class="cc"> ........... </tspan><tspan class="value" id="contrib_data">1,701</tspan> |<tspan class="key">Followers</tspan>:<tspan class="cc"> ......... </tspan><tspan class="value" id="follower_data">7</tspan>
+<tspan x="400" y="490" class="cc">. </tspan><tspan class="key">Commits</tspan>:<tspan class="cc"> ........... </tspan><tspan class="value" id="contrib_data">1,701</tspan> | <tspan class="key">Followers</tspan>:<tspan class="cc"> ......... </tspan><tspan class="value" id="follower_data">7</tspan>
 
-<tspan x="400" y="510" class="cc">. </tspan><tspan class="key">Lines</tspan>:<tspan class="cc"> ....... </tspan><tspan class="value" id="loc_data">131,086</tspan> (<tspan class="addColor" id="loc_add">216,506</tspan><tspan class="addColor">++</tspan>,<tspan> .... </tspan><tspan class="delColor" id="loc_del">85,420</tspan><tspan class="delColor">--</tspan> )
+<tspan x="400" y="510" class="cc">. </tspan><tspan class="key">Lines</tspan>:<tspan class="cc"> ........... </tspan><tspan class="value" id="loc_data">131,086</tspan> | (<tspan class="addColor" id="loc_add">216,506</tspan><tspan class="addColor">++</tspan>,<tspan> </tspan><tspan class="delColor" id="loc_del">85,420</tspan><tspan class="delColor">--</tspan> )
 
 <tspan x="400" y="530">-————————————————————————————————————————————————————-—-</tspan> 
 </text>
