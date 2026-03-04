@@ -3,6 +3,7 @@ import json
 import hashlib
 import requests
 from lxml import etree
+from pprint import pprint
 from dotenv import load_dotenv
 
 from datetime import datetime as dt
@@ -13,9 +14,9 @@ load_dotenv()
 
 class Stats:
     def __init__(self) -> None:
-        self.token = os.environ['ACCESS_TOKEN']
-        self.headers = {'authorization': 'token ' + self.token}
-        self.username = 'salko-ua'
+        self.token = os.environ["ACCESS_TOKEN"]
+        self.headers = {"authorization": "token " + self.token}
+        self.user_id = self.get_viewer_id()
 
         # MAIN
         self.os = "Linux (NixOS 25.05)"
@@ -31,17 +32,75 @@ class Stats:
         self.database = "PostgreSQL, MONGODB, SQLite, Redis"
         self.other = "HTML, CSS, JSON, MARKDOWN"
 
+        self.scope = ["OWNER", "COLLABORATOR", "ORGANIZATION_MEMBER"]
+
+    def get_viewer_id(self) -> str:
+        query = """
+        query {
+            viewer {
+                id
+            }
+        }
+        """
+        response = requests.post(
+            "https://api.github.com/graphql",
+            json={"query": query},
+            headers=self.headers,
+        )
+        return response.json()["data"]["viewer"]["id"]
+
     def get_age(self) -> str:
         """
         Returns the length of time since I was born e.g.
         >>> 'XX years, XX months, XX days'
         """
         diff = relativedelta.relativedelta(dt.today(), self.birthday)
-        return '{} {}, {} {}, {} {}{}'.format(
-            diff.years, 'year' + self.format_plural(diff.years),
-            diff.months, 'month' + self.format_plural(diff.months),
-            diff.days, 'day' + self.format_plural(diff.days),
-            ' 🎂' if (diff.months == 0 and diff.days == 0) else '')
+        return "{} {}, {} {}, {} {}{}".format(
+            diff.years,
+            "year" + self.format_plural(diff.years),
+            diff.months,
+            "month" + self.format_plural(diff.months),
+            diff.days,
+            "day" + self.format_plural(diff.days),
+            " 🎂" if (diff.months == 0 and diff.days == 0) else "",
+        )
+
+    def fetch_all_pages(
+        self, query: str, variables: dict = {}, page_size: int = 100
+    ) -> list:
+        variables = {**variables, "first": page_size, "cursor": None}
+        items = []
+
+        while True:
+            response = requests.post(
+                "https://api.github.com/graphql",
+                json={"query": query, "variables": variables},
+                headers=self.headers,
+            )
+            data = response.json()["data"]
+
+            # Walk the response to find nodes/edges and pageInfo
+            def find(obj, key):
+                if isinstance(obj, dict):
+                    if key in obj:
+                        return obj[key]
+                    for v in obj.values():
+                        r = find(v, key)
+                        if r is not None:
+                            return r
+
+            nodes = find(data, "nodes") or [
+                e["node"] for e in (find(data, "edges") or [])
+            ]
+            page_info = find(data, "pageInfo")
+
+            items.extend(nodes)
+
+            if not page_info or not page_info["hasNextPage"]:
+                break
+            variables["cursor"] = page_info["endCursor"]
+
+        return items
 
     def format_plural(self, unit):
         """
@@ -51,7 +110,64 @@ class Stats:
         >>> '1 day'
         'day' + format_plural(diff.days) == 1
         """
-        return 's' if unit != 1 else ''
+        return "s" if unit != 1 else ""
+
+    def get_all_repositories(self):
+        query = """
+        query ($first: Int, $cursor: String, $owner_affiliation: [RepositoryAffiliation]!, $author_id: ID!) {
+            viewer {
+                repositories(first: $first, after: $cursor, ownerAffiliations: $owner_affiliation) {
+                    pageInfo {
+                        hasNextPage
+                        endCursor
+                    }
+                    nodes {
+                        id
+                        name
+                        owner {
+                            login
+                        }
+                        diskUsage
+                        isArchived
+                        isDisabled
+                        isEmpty
+                        isFork
+                        isInOrganization
+                        isPrivate
+                        stargazerCount
+                        object(expression: "HEAD") {
+                            ... on Commit {
+                                history(author: { id: $author_id }) {
+                                    totalCount
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        """
+        variables = {"owner_affiliation": self.scope, "author_id": self.user_id}
+        result = self.fetch_all_pages(query=query, variables=variables, page_size=100)
+        self.print_commit_stats(result)
+        # pprint(result)
+
+    def print_commit_stats(self, repos: list):
+        stats = [
+            (
+                f"{r['owner']['login']}/{r['name']}",
+                r["object"]["history"]["totalCount"] if r["object"] else 0,
+            )
+            for r in repos
+        ]
+
+        s = 0
+        g = 0
+        for name, count in sorted(stats, key=lambda x: x[1], reverse=True):
+            print(f"{count:>8,}  {name}")
+            s += count
+            g += 1
+        print(s, g)
 
     def get_all_data(self):
         all_repos = []
@@ -59,9 +175,9 @@ class Stats:
         cursor = None
 
         query = """
-        query ($owner_affiliation: [RepositoryAffiliation]!, $emails: [String!], $after: String) {
+        query ($owner_affiliation: [RepositoryAffiliation]!, $emails: [String!], $after: [String!]) {
         viewer {
-            repositories(first: 10, ownerAffiliations: $owner_affiliation, after: $after) {
+            repositories(first: 10, owneraffiliations: $owner_affiliation, after: $after) {
             pageInfo {
                 hasNextPage
                 endCursor
@@ -91,68 +207,80 @@ class Stats:
 
         while has_next_page:
             variables = {
-                'owner_affiliation': ['OWNER', 'COLLABORATOR', 'ORGANIZATION_MEMBER'],
-                'emails': ['github@salko-ua.de', 'st21c8@vvpc.com.ua', 'chips69jamil69game@gmail.com'],
-                'after': cursor
+                "owner_affiliation": ["OWNER", "COLLABORATOR", "ORGANIZATION_MEMBER"],
+                "emails": [
+                    "github@salko-ua.de",
+                    "st21c8@vvpc.com.ua",
+                    "chips69jamil69game@gmail.com",
+                ],
+                "after": cursor,
             }
 
             response = requests.post(
-                'https://api.github.com/graphql',
-                json={'query': query, 'variables': variables},
-                headers=self.headers
+                "https://api.github.com/graphql",
+                json={"query": query, "variables": variables},
+                headers=self.headers,
             ).json()
 
-            if 'errors' in response:
+            if "errors" in response:
                 print(f"Error: {response['errors']}")
                 break
 
-            repo_data = response['data']['viewer']['repositories']
-            all_repos.extend(repo_data['nodes'])
+            repo_data = response["data"]["viewer"]["repositories"]
+            all_repos.extend(repo_data["nodes"])
 
-            page_info = repo_data['pageInfo']
-            has_next_page = page_info['hasNextPage']
-            cursor = page_info['endCursor']
+            page_info = repo_data["pageInfo"]
+            has_next_page = page_info["hasNextPage"]
+            cursor = page_info["endCursor"]
 
         return all_repos
 
-
     def get_cached_data(self):
-        cache_file = 'repo_cache.json'
+        cache_file = "repo_cache.json"
         cache = json.load(open(cache_file)) if os.path.exists(cache_file) else {}
 
         fresh_nodes = self.get_all_data()
 
         for node in fresh_nodes:
-            hashed_name = hashlib.sha256(node['id'].encode()).hexdigest()[:12]
+            hashed_name = hashlib.sha256(node["id"].encode()).hexdigest()[:12]
 
-            ref = node.get('defaultBranchRef')
+            ref = node.get("defaultBranchRef")
             if ref:
-                hist = ref['target']['history']
+                hist = ref["target"]["history"]
                 cache[hashed_name] = {
-                    'commits': hist['totalCount'],
-                    'additions': sum(c['additions'] for c in hist['nodes']),
-                    'deletions': sum(c['deletions'] for c in hist['nodes'])
+                    "commits": hist["totalCount"],
+                    "additions": sum(c["additions"] for c in hist["nodes"]),
+                    "deletions": sum(c["deletions"] for c in hist["nodes"]),
                 }
 
-        with open(cache_file, 'w') as f:
+        with open(cache_file, "w") as f:
             json.dump(cache, f, indent=4)
         return cache
 
-    def svg_overwrite(self, filename, age_data, star_data, repo_data, contrib_data, follower_data, loc_data):
+    def svg_overwrite(
+        self,
+        filename,
+        age_data,
+        star_data,
+        repo_data,
+        contrib_data,
+        follower_data,
+        loc_data,
+    ):
         """
         Parse SVG files and update elements with my age, commits, stars, repositories, and lines written
         """
         tree = etree.parse(filename)  # type: ignore
         root = tree.getroot()
         self.justify_format(root, "age_data", age_data, 0)
-        self.justify_format(root, 'star_data', star_data, 0)
-        self.justify_format(root, 'repo_data', repo_data, 0)
-        self.justify_format(root, 'contrib_data', contrib_data, 0)
-        self.justify_format(root, 'follower_data', follower_data, 0)
-        self.justify_format(root, 'loc_data', loc_data[2], 0)
-        self.justify_format(root, 'loc_add', loc_data[0], 0)
-        self.justify_format(root, 'loc_del', loc_data[1], 0)
-        tree.write(filename, encoding='utf-8', xml_declaration=True)
+        self.justify_format(root, "star_data", star_data, 0)
+        self.justify_format(root, "repo_data", repo_data, 0)
+        self.justify_format(root, "contrib_data", contrib_data, 0)
+        self.justify_format(root, "follower_data", follower_data, 0)
+        self.justify_format(root, "loc_data", loc_data[2], 0)
+        self.justify_format(root, "loc_add", loc_data[0], 0)
+        self.justify_format(root, "loc_del", loc_data[1], 0)
+        tree.write(filename, encoding="utf-8", xml_declaration=True)
 
     def justify_format(self, root, element_id, new_text, length=0):
         """
@@ -164,10 +292,10 @@ class Stats:
         self.find_and_replace(root, element_id, new_text)
         just_len = max(0, length - len(new_text))
         if just_len <= 2:
-            dot_map = {0: '', 1: ' ', 2: '. '}
+            dot_map = {0: "", 1: " ", 2: ". "}
             dot_string = dot_map[just_len]
         else:
-            dot_string = ' ' + ('.' * just_len) + ' '
+            dot_string = " " + ("." * just_len) + " "
         self.find_and_replace(root, f"{element_id}_dots", dot_string)
 
     def find_and_replace(self, root, element_id, new_text):
@@ -182,47 +310,63 @@ class Stats:
         """
         Returns the number of followers of the user
         """
-        query = '''
+        query = """
         query($login: String!){
             user(login: $login) {
                 followers {
                     totalCount
                 }
             }
-        }'''
+        }"""
 
         request = requests.post(
-            'https://api.github.com/graphql',
-            json={'query': query, 'variables': {'login': self.username}},
-            headers=self.headers
+            "https://api.github.com/graphql",
+            json={"query": query, "variables": {"login": self.username}},
+            headers=self.headers,
         )
-        return int(request.json()['data']['user']['followers']['totalCount'])
+        return int(request.json()["data"]["user"]["followers"]["totalCount"])
+
+
+#
+# def main():
+#     stats_obj = Stats()
+#     age_data = stats_obj.get_age()
+#     cache_data = stats_obj.get_cached_data()
+#
+#     total_commits = 0
+#     total_add = 0
+#     total_del = 0
+#
+#     for name, info in cache_data.items():
+#         # print(f"{name}: +{info['additions']}, -{info['deletions']}, commits: {info['commits']}")
+#         total_commits += info["commits"]
+#         total_add += info["additions"]
+#         total_del += info["deletions"]
+#
+#     commit_data = total_commits
+#     star_data = "7"
+#     repo_data = len(cache_data)
+#     follower_data = stats_obj.follower_getter()
+#
+#     total_loc = [total_add, total_del, total_add - total_del, True]
+#
+#     for index in range(len(total_loc) - 1):
+#         total_loc[index] = "{:,}".format(total_loc[index])
+#
+#     stats_obj.svg_overwrite(
+#         "dark_mode.svg",
+#         age_data,
+#         star_data,
+#         repo_data,
+#         commit_data,
+#         follower_data,
+#         total_loc[:-1],
+#     )
+
 
 def main():
     stats_obj = Stats()
-    age_data = stats_obj.get_age()
-    cache_data = stats_obj.get_cached_data()
+    stats_obj.get_all_repositories()
 
-    total_commits = 0
-    total_add = 0
-    total_del = 0
-
-    for name, info in cache_data.items():
-        # print(f"{name}: +{info['additions']}, -{info['deletions']}, commits: {info['commits']}")
-        total_commits += info['commits']
-        total_add += info['additions']
-        total_del += info['deletions']
-
-    commit_data = total_commits
-    star_data = "No data"
-    repo_data = len(cache_data)
-    follower_data =  stats_obj.follower_getter()
-
-    total_loc = [total_add, total_del, total_add - total_del, True]
-
-    for index in range(len(total_loc)-1):
-        total_loc[index] = '{:,}'.format(total_loc[index])
-
-    stats_obj.svg_overwrite('dark_mode.svg', age_data, star_data, repo_data, commit_data, follower_data, total_loc[:-1])
 
 main()
