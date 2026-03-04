@@ -78,8 +78,8 @@
     <tspan x="350" y="450">- github stats</tspan> -———————————————————————————————————————————-—-
 
     <tspan x="350" y="470" class="cc">. </tspan><tspan class="key">Repos</tspan><tspan class="cc">: ................. </tspan><tspan id="repos" class="value">63</tspan> | <tspan class="key">Stars</tspan><tspan class="cc">: .................. </tspan><tspan id="stars" class="value">7</tspan>
-    <tspan x="350" y="490" class="cc">. </tspan><tspan class="key">Commits</tspan><tspan class="cc">: ............ </tspan><tspan id="commits" class="value">1,916</tspan> | <tspan class="key">Followers</tspan><tspan class="cc">: .............. </tspan><tspan id="followers" class="value">7</tspan>
-    <tspan x="350" y="510" class="cc">. </tspan><tspan class="key">Lines</tspan><tspan class="cc">: ............ </tspan><tspan id="lines" class="value">144,334</tspan> | (<tspan id="added" class="addColor">257,736</tspan>, <tspan id="deleted" class="delColor">113,402</tspan>)
+    <tspan x="350" y="490" class="cc">. </tspan><tspan class="key">Commits</tspan><tspan class="cc">: ............ </tspan><tspan id="commits" class="value">1,919</tspan> | <tspan class="key">Followers</tspan><tspan class="cc">: .............. </tspan><tspan id="followers" class="value">7</tspan>
+    <tspan x="350" y="510" class="cc">. </tspan><tspan class="key">Lines</tspan><tspan class="cc">: ............ </tspan><tspan id="lines" class="value">144,335</tspan> | (<tspan id="added" class="addColor">257,774</tspan>, <tspan id="deleted" class="delColor">113,439</tspan>)
 
     <tspan x="350" y="530">-——————————————————————————————————————————————————————————-—-</tspan> 
   </text>
