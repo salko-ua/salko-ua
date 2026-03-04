@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,monospace" width="985px" height="1030px" font-size="16px">
+<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,monospace" width="985px" height="550px" font-size="16px">
   <style>
     @font-face {
       src: local('Consolas'), local('Consolas Bold');
@@ -10,102 +10,129 @@
     .key { fill: #ff7b72; font-family: 'ConsolasFallback', monospace; font-size: 16px; }
     .value { fill: #a5d6ff; font-family: 'ConsolasFallback', monospace; font-size: 16px; }
     .cc { fill: #6e7681; font-family: 'ConsolasFallback', monospace; font-size: 16px; }
-    .addColor {
-      fill: #3fb950;
-    }
-
-    .delColor {
-      fill: #f85149;
-    } 
+    .addColor { fill: #3fb950; }
+    .delColor { fill: #f85149; } 
 
     #sa_part { fill: url(#grad-blue); filter: drop-shadow(0 0 5px rgba(0, 100, 255, 0.5)); }
     #lo_part { fill: url(#grad-yellow); filter: drop-shadow(0 0 5px rgba(255, 200, 0, 0.5)); }
 
-    /* Анімація частинок */
     @keyframes float {
       0%, 100% { transform: translateY(0) scale(1); opacity: 0.4; }
       50% { transform: translateY(-5px) scale(1.2); opacity: 0.8; }
     }
     .particle { animation: float 3s infinite ease-in-out; }
-    .p-1 { animation-delay: 0s; }
-    .p-2 { animation-delay: 0.5s; }
-    .p-3 { animation-delay: 1.2s; }
   </style>
 
-<defs>
-  <linearGradient id="grad-blue" x1="0%" y1="0%" x2="100%" y2="0%">
-    <stop offset="0%" style="stop-color:#58a6ff;stop-opacity:1" />
-    <stop offset="100%" style="stop-color:#0044ff;stop-opacity:1" />
-  </linearGradient>
-  <linearGradient id="grad-yellow" x1="0%" y1="0%" x2="100%" y2="0%">
-    <stop offset="0%" style="stop-color:#f2cc60;stop-opacity:1" />
-    <stop offset="100%" style="stop-color:#ffcc00;stop-opacity:1" />
-  </linearGradient>
-</defs>
+  <defs>
+    <linearGradient id="grad-blue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#58a6ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0044ff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad-yellow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f2cc60;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffcc00;stop-opacity:1" />
+    </linearGradient>
+  </defs>
 
-<rect width="985px" height="1030px" fill="#161b22" rx="15"/>
-<text x="110" y="150" fill="#c9d1d9" class="ascii">
-<tspan id="sa_part" x="110" y="150"> ░██████╗  █████╗░</tspan>
-<tspan id="sa_part" x="110" y="171"> ██╔════╝ ██╔══██╗</tspan>
-<tspan id="sa_part" x="110" y="192"> ╚█████╗░ ███████║</tspan>
-<tspan id="sa_part" x="110" y="213"> ░╚═══██╗ ██╔══██║</tspan>
-<tspan id="sa_part" x="110" y="234">╚██████╔╝ ██║░░██║</tspan>
-<tspan id="sa_part" x="110" y="255"> ╚═════╝░ ╚═╝  ╚═╝</tspan>
+  <rect width="985px" height="550px" fill="#161b22" rx="15"/>
 
-<tspan id="lo_part" x="110" y="290"> ██╗░░░░░  █████╗░</tspan>
-<tspan id="lo_part" x="110" y="311"> ██║░░░░░ ██╔══██╗</tspan>
-<tspan id="lo_part" x="110" y="332"> ██║░░░░░ ██║░░██║</tspan>
-<tspan id="lo_part" x="110" y="353"> ██║░░░░░ ██║░░██║</tspan>
-<tspan id="lo_part" x="110" y="374"> ███████╗ ╚█████╔╝</tspan>
-<tspan id="lo_part" x="110" y="395"> ╚══════╝  ╚════╝░</tspan>
-</text>
-<text x="400" y="30" fill="#c9d1d9">
-<tspan x="400" y="30">salko-ua</tspan> -———————————————————————————————————————————-—-
+  <text x="80" y="150" fill="#c9d1d9" class="ascii">
+    <tspan id="sa_part" x="80" y="150"> ░██████╗  █████╗░</tspan>
+    <tspan id="sa_part" x="80" y="171"> ██╔════╝ ██╔══██╗</tspan>
+    <tspan id="sa_part" x="80" y="192"> ╚█████╗░ ███████║</tspan>
+    <tspan id="sa_part" x="80" y="213"> ░╚═══██╗ ██╔══██║</tspan>
+    <tspan id="sa_part" x="80" y="234">╚██████╔╝ ██║░░██║</tspan>
+    <tspan id="sa_part" x="80" y="255"> ╚═════╝░ ╚═╝  ╚═╝</tspan>
+    <tspan id="lo_part" x="80" y="290"> ██╗░░░░░  █████╗░</tspan>
+    <tspan id="lo_part" x="80" y="311"> ██║░░░░░ ██╔══██╗</tspan>
+    <tspan id="lo_part" x="80" y="332"> ██║░░░░░ ██║░░██║</tspan>
+    <tspan id="lo_part" x="80" y="353"> ██║░░░░░ ██║░░██║</tspan>
+    <tspan id="lo_part" x="80" y="374"> ███████╗ ╚█████╔╝</tspan>
+    <tspan id="lo_part" x="80" y="395"> ╚══════╝  ╚════╝░</tspan>
+  </text>
 
-<tspan x="400" y="50" class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc"> .................. </tspan><tspan class="value" id="operation_system">Linux (NixOS 25.11), Pixel 6</tspan>
+  <text x="350" y="30" fill="#c9d1d9">
+    <tspan x="350" y="30" id="v_user"></tspan> <tspan id="h_main"></tspan>
+    
+    <tspan x="350" y="50" class="cc">. </tspan><tspan id="k_os" class="key"></tspan><tspan id="d_os" class="cc"></tspan><tspan id="v_os" class="value"></tspan>
+    <tspan x="350" y="70" class="cc">. </tspan><tspan id="k_up" class="key"></tspan><tspan id="d_up" class="cc"></tspan><tspan id="v_up" class="value"></tspan>
+    <tspan x="350" y="90" class="cc">. </tspan><tspan id="k_ho" class="key"></tspan><tspan id="d_ho" class="cc"></tspan><tspan id="v_ho" class="value"></tspan>
+    <tspan x="350" y="110" class="cc">. </tspan><tspan id="k_ke" class="key"></tspan><tspan id="d_ke" class="cc"></tspan><tspan id="v_ke" class="value"></tspan>
+    <tspan x="350" y="130" class="cc">. </tspan><tspan id="k_ide" class="key"></tspan><tspan id="d_ide" class="cc"></tspan><tspan id="v_ide" class="value"></tspan>
 
-<tspan x="400" y="70" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc"> .............. </tspan><tspan class="value" id="age_data">19 years, 11 months, 4 days</tspan>
+    <tspan x="350" y="170" class="cc">. </tspan><tspan id="k_pr" class="key"></tspan><tspan id="d_pr" class="cc"></tspan><tspan id="v_pr" class="value"></tspan>
+    <tspan x="350" y="190" class="cc">. </tspan><tspan id="k_co" class="key"></tspan><tspan id="d_co" class="cc"></tspan><tspan id="v_co" class="value"></tspan>
+    <tspan x="350" y="210" class="cc">. </tspan><tspan id="k_ma" class="key"></tspan><tspan id="d_ma" class="cc"></tspan><tspan id="v_ma" class="value"></tspan>
+    <tspan x="350" y="230" class="cc">. </tspan><tspan id="k_ad" class="key"></tspan><tspan id="d_ad" class="cc"></tspan><tspan id="v_ad" class="value"></tspan>
+    <tspan x="350" y="250" class="cc">. </tspan><tspan id="k_sw" class="key"></tspan><tspan id="d_sw" class="cc"></tspan><tspan id="v_sw" class="value"></tspan>
+    <tspan x="350" y="270" class="cc">. </tspan><tspan id="k_ga" class="key"></tspan><tspan id="d_ga" class="cc"></tspan><tspan id="v_ga" class="value"></tspan>
 
-<tspan x="400" y="90" class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc"> ............................. </tspan><tspan class="value">Europe, Ukraine</tspan>
+    <tspan x="350" y="310" id="h_con"></tspan> <tspan id="h_con_line"></tspan>
+    <tspan x="350" y="330" class="cc">. </tspan><tspan id="k_gm" class="key"></tspan><tspan id="d_gm" class="cc"></tspan><tspan id="v_gm" class="value"></tspan>
+    <tspan x="350" y="350" class="cc">. </tspan><tspan id="k_me" class="key"></tspan><tspan id="d_me" class="cc"></tspan><tspan id="v_me" class="value"></tspan>
+    <tspan x="350" y="370" class="cc">. </tspan><tspan id="k_wo" class="key"></tspan><tspan id="d_wo" class="cc"></tspan><tspan id="v_wo" class="value"></tspan>
+    <tspan x="350" y="390" class="cc">. </tspan><tspan id="k_si" class="key"></tspan><tspan id="d_si" class="cc"></tspan><tspan id="v_si" class="value"></tspan>
+    <tspan x="350" y="410" class="cc">. </tspan><tspan id="k_di" class="key"></tspan><tspan id="d_di" class="cc"></tspan><tspan id="v_di" class="value"></tspan>
 
-<tspan x="400" y="110" class="cc">. </tspan><tspan class="key">Kernel</tspan>:<tspan class="cc"> .............................. </tspan><tspan class="value">Volyn, Lutsk</tspan>
+    <tspan x="350" y="450" id="h_git"></tspan> <tspan id="h_git_line"></tspan>
+    <tspan x="350" y="470" class="cc">. </tspan><tspan id="k_re" class="key"></tspan><tspan id="d_re" class="cc"></tspan><tspan id="v_re" class="value"></tspan><tspan class="cc"> | </tspan><tspan id="k_st" class="key"></tspan><tspan id="d_st" class="cc"></tspan><tspan id="v_st" class="value"></tspan>
+    <tspan x="350" y="490" class="cc">. </tspan><tspan id="k_cm" class="key"></tspan><tspan id="d_cm" class="cc"></tspan><tspan id="v_cm" class="value"></tspan><tspan class="cc"> | </tspan><tspan id="k_fo" class="key"></tspan><tspan id="d_fo" class="cc"></tspan><tspan id="v_fo" class="value"></tspan>
+    <tspan x="350" y="510" class="cc">. </tspan><tspan id="k_li" class="key"></tspan><tspan id="d_li" class="cc"></tspan><tspan id="v_li" class="value"></tspan><tspan class="cc"> | (</tspan><tspan id="v_la" class="addColor"></tspan><tspan class="addColor">++</tspan><tspan class="cc">,</tspan> <tspan id="v_ld" class="delColor"></tspan><tspan class="delColor">--</tspan><tspan class="cc">)</tspan>
+    
+    <tspan x="350" y="530" id="h_footer"></tspan>
+  </text>
 
-<tspan x="400" y="130" class="cc">. </tspan><tspan class="key">IDE</tspan>:<tspan class="cc"> ............................ </tspan><tspan class="value">Lazy nvim v0.11.2</tspan>
+  <script>
+    <![CDATA[
+      const d = {
+        user: "salko-ua",
+        h_main: "-—————————————————————————————————————————————————-—-",
+        h_con: "- contact",
+        h_con_l: "-————————————————————————————————————————————————-—-",
+        h_git: "- github stats",
+        h_git_l: "-———————————————————————————————————————————-—-",
+        h_foot: "-——————————————————————————————————————————————————————————-—-",
+        
+        os: ["Os", ": ......................... ", "Linux (nixos 25.11), pixel 6"],
+        up: ["Uptime", ": ...................... ", "19 years, 11 months, 4 days"],
+        ho: ["Host", ": .................................... ", "Europe, Ukraine"],
+        ke: ["Kernel", ": ..................................... ", "Volyn, Lutsk"],
+        ide: ["IDE", ": ................................... ", "Lazy nvim v0.11.2"],
+        
+        pr: ["Langs.Programming", ": .................... ", "Python, JavaScript"],
+        co: ["Langs.Computer", ": .................... ", "HTML, CSS, JSON, YAML"],
+        ma: ["Languages.Main", ": ........... ", "Ukrainian(Native), English(B2)"],
+        ad: ["languages.Additional", ": ....................... ", "Japanese(n5)"],
+        sw: ["Hobbies.Software", ": ................... ", "Private pet projects"],
+        ga: ["Hobbies.Games", ": .......................... ", "Collecting games"],
+        
+        gm: ["Email.Gmail", ": .................. ", "salo.lard.tocino@gmail.com"],
+        me: ["Email.Me", ": ................................. ", "me@salko-ua.de"],
+        wo: ["Email.Work", ": ............................. ", "work@salko-ua.de"],
+        si: ["Social.Site", ": ................................. ", "salko-ua.de"],
+        di: ["Social.Discord", ": .................................. ", "salkoua"],
+        
+        re: ["Repos", ": ................. ", "62"],
+        st: ["Stars", ": .................. ", "7"],
+        cm: ["Commits", ": ............ ", "1,701"],
+        fo: ["Followers", ": .............. ", "7"],
+        li: ["Lines", ": ............ ", "131,086"],
+        la: "216,506",
+        ld: "85,420"
+      };
 
-<tspan x="400" y="150" class="cc">. </tspan>
+      const set = (id, txt) => { const el = document.getElementById(id); if(el) el.textContent = txt; };
 
-<tspan x="400" y="170" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Programming</tspan>:<tspan class="cc"> ......... </tspan><tspan class="value">Python, JavaScript</tspan>
+      set('v_user', d.user); set('h_main', d.h_main);
+      set('h_con', d.h_con); set('h_con_line', d.h_con_l);
+      set('h_git', d.h_git); set('h_git_line', d.h_git_l);
+      set('h_footer', d.h_foot);
 
-<tspan x="400" y="190" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Computer</tspan>:<tspan class="cc"> ......... </tspan><tspan class="value">HTML, CSS, JSON, YAML</tspan>
+      [['os',d.os],['up',d.up],['ho',d.ho],['ke',d.ke],['ide',d.ide],['pr',d.pr],['co',d.co],['ma',d.ma],['ad',d.ad],['sw',d.sw],['ga',d.ga],['gm',d.gm],['me',d.me],['wo',d.wo],['si',d.si],['di',d.di],['re',d.re],['st',d.st],['cm',d.cm],['fo',d.fo],['li',d.li]].forEach(x => {
+        set('k_'+x[0], x[1][0]); set('d_'+x[0], x[1][1]); set('v_'+x[0], x[1][2]);
+      });
 
-<tspan x="400" y="210" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Real</tspan>:<tspan class="cc"> ...... </tspan><tspan class="value">Ukrainian, English, Japanese</tspan>
-
-<tspan x="400" y="230" class="cc">. </tspan>
-
-<tspan x="400" y="250" class="cc">. </tspan><tspan class="key">Hobbies</tspan>.<tspan class="key">Software</tspan>:<tspan class="cc"> ............ </tspan><tspan class="value">Private pet projects</tspan>
-
-<tspan x="400" y="270" class="cc">. </tspan><tspan class="key">Hobbies</tspan>.<tspan class="key">Games</tspan>:<tspan class="cc"> ................... </tspan><tspan class="value">Collecting games</tspan>
-
-<tspan x="400" y="310">- Contact</tspan> -——————————————————————————————————————————-—-
-
-<tspan x="400" y="330" class="cc">. </tspan><tspan class="key">Email</tspan>.<tspan class="key">Gmail</tspan>:<tspan class="cc"> ........... </tspan><tspan class="value">salo.lard.tocino@gmail.com</tspan>
-
-<tspan x="400" y="350" class="cc">. </tspan><tspan class="key">Email</tspan>.<tspan class="key">Me</tspan>:<tspan class="cc"> .......................... </tspan><tspan class="value">me@salko-ua.de</tspan>
-
-<tspan x="400" y="370" class="cc">. </tspan><tspan class="key">Email</tspan>.<tspan class="key">Work</tspan>:<tspan class="cc"> ...................... </tspan><tspan class="value">work@salko-ua.de</tspan>
-
-<tspan x="400" y="390" class="cc">. </tspan><tspan class="key">Social</tspan>.<tspan class="key">Site</tspan>:<tspan class="cc"> .......................... </tspan><tspan class="value">salko-ua.de</tspan>
-
-<tspan x="400" y="410" class="cc">. </tspan><tspan class="key">Social</tspan>.<tspan class="key">Discord</tspan>:<tspan class="cc"> ........................... </tspan><tspan class="value">salkoua</tspan>
-
-<tspan x="400" y="450">- GitHub Stats</tspan> -—————————————————————————————————————-—-
-
-<tspan x="400" y="470" class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc"> ................ </tspan><tspan class="value" id="repo_data">62</tspan> | <tspan class="key">Stars</tspan>:<tspan class="cc"> ............. </tspan><tspan class="value" id="star_data">7</tspan>
-
-<tspan x="400" y="490" class="cc">. </tspan><tspan class="key">Commits</tspan>:<tspan class="cc"> ........... </tspan><tspan class="value" id="contrib_data">1,701</tspan> | <tspan class="key">Followers</tspan>:<tspan class="cc"> ......... </tspan><tspan class="value" id="follower_data">7</tspan>
-
-<tspan x="400" y="510" class="cc">. </tspan><tspan class="key">Lines</tspan>:<tspan class="cc"> ........... </tspan><tspan class="value" id="loc_data">131,086</tspan> | (<tspan class="addColor" id="loc_add">216,506</tspan><tspan class="addColor">++</tspan>,<tspan> </tspan><tspan class="delColor" id="loc_del">85,420</tspan><tspan class="delColor">--</tspan> )
-
-<tspan x="400" y="530">-————————————————————————————————————————————————————-—-</tspan> 
-</text>
+      set('v_la', d.la); set('v_ld', d.ld);
+    ]]>
+  </script>
 </svg>
