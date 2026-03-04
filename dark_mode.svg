@@ -1,73 +1,64 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,monospace" width="985px" height="530px" font-size="16px">
+<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,monospace" width="985px" height="1030px" font-size="16px">
   <style>
-  @font-face {
-    src: local('Consolas'), local('Consolas Bold');
-    font-family: 'ConsolasFallback';
-    font-display: swap;
-    -webkit-size-adjust: 109%;
-    size-adjust: 109%;
-  }
-  .key {
-    fill:rgb(255, 87, 87);
-  }
-  .value {
-    fill: #a5d6ff;
-  }
-  .addColor {
-    fill: #3fb950;
-  }
-  .delColor {
-    fill: #f85149;
+    @font-face {
+      src: local('Consolas'), local('Consolas Bold');
+      font-family: 'ConsolasFallback';
+      font-display: swap;
     }
-  .cc {
-    fill: #616e7f;
+    .ascii { font-family: 'ConsolasFallback', monospace; font-size: 16px; white-space: pre; }
+    .key { fill: #ff7b72; font-family: 'ConsolasFallback', monospace; font-size: 16px; }
+    .value { fill: #a5d6ff; font-family: 'ConsolasFallback', monospace; font-size: 16px; }
+    .cc { fill: #6e7681; font-family: 'ConsolasFallback', monospace; font-size: 16px; }
+    .addColor {
+      fill: #3fb950;
     }
-  text, tspan {
-    white-space: pre;
-  }
-  #letter_s, #letter_a {
-    fill:rgb(0, 68, 255);
-  }
-  #letter_l, #letter_o {
-    fill:rgb(255, 204, 0);
-  }
+
+    .delColor {
+      fill: #f85149;
+    } 
+
+    #sa_part { fill: url(#grad-blue); filter: drop-shadow(0 0 5px rgba(0, 100, 255, 0.5)); }
+    #lo_part { fill: url(#grad-yellow); filter: drop-shadow(0 0 5px rgba(255, 200, 0, 0.5)); }
+
+    /* Анімація частинок */
+    @keyframes float {
+      0%, 100% { transform: translateY(0) scale(1); opacity: 0.4; }
+      50% { transform: translateY(-5px) scale(1.2); opacity: 0.8; }
+    }
+    .particle { animation: float 3s infinite ease-in-out; }
+    .p-1 { animation-delay: 0s; }
+    .p-2 { animation-delay: 0.5s; }
+    .p-3 { animation-delay: 1.2s; }
   </style>
-<rect width="985px" height="530px" fill="#161b22" rx="15"/>
-<text x="160" y="30" fill="#c9d1d9" class="ascii">
-<!-- S -->
-<tspan id="letter_s" x="160" y="30"> ░██████╗</tspan>
-<tspan id="letter_s" x="160" y="51"> ██╔════╝</tspan>
-<tspan id="letter_s" x="160" y="72"> ╚█████╗░</tspan>
-<tspan id="letter_s" x="160" y="93"> ░╚═══██╗</tspan>
-<tspan id="letter_s" x="160" y="114">╚██████╔╝</tspan>
-<tspan id="letter_s" x="160" y="135">  ═════╝░</tspan>
 
-<!-- A -->
-<tspan id="letter_a" x="160" y="156">  █████╗░</tspan>
-<tspan id="letter_a" x="160" y="177"> ██╔══██╗</tspan>
-<tspan id="letter_a" x="160" y="198"> ███████║</tspan>
-<tspan id="letter_a" x="160" y="219"> ██╔══██║</tspan>
-<tspan id="letter_a" x="160" y="240"> ██║░░██║</tspan>
-<tspan id="letter_a" x="160" y="261"> ╚═╝  ╚═╝</tspan>
+<defs>
+  <linearGradient id="grad-blue" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" style="stop-color:#58a6ff;stop-opacity:1" />
+    <stop offset="100%" style="stop-color:#0044ff;stop-opacity:1" />
+  </linearGradient>
+  <linearGradient id="grad-yellow" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" style="stop-color:#f2cc60;stop-opacity:1" />
+    <stop offset="100%" style="stop-color:#ffcc00;stop-opacity:1" />
+  </linearGradient>
+</defs>
 
-<!-- L -->
-<tspan id="letter_l" x="160" y="282"> ██╗░░░░░</tspan>
-<tspan id="letter_l" x="160" y="303"> ██║░░░░░</tspan>
-<tspan id="letter_l" x="160" y="324"> ██║░░░░░</tspan>
-<tspan id="letter_l" x="160" y="345"> ██║░░░░░</tspan>
-<tspan id="letter_l" x="160" y="366"> ███████╗</tspan>
-<tspan id="letter_l" x="160" y="387"> ╚══════╝</tspan>
+<rect width="985px" height="1030px" fill="#161b22" rx="15"/>
+<text x="110" y="150" fill="#c9d1d9" class="ascii">
+<tspan id="sa_part" x="110" y="150"> ░██████╗  █████╗░</tspan>
+<tspan id="sa_part" x="110" y="171"> ██╔════╝ ██╔══██╗</tspan>
+<tspan id="sa_part" x="110" y="192"> ╚█████╗░ ███████║</tspan>
+<tspan id="sa_part" x="110" y="213"> ░╚═══██╗ ██╔══██║</tspan>
+<tspan id="sa_part" x="110" y="234">╚██████╔╝ ██║░░██║</tspan>
+<tspan id="sa_part" x="110" y="255"> ╚═════╝░ ╚═╝  ╚═╝</tspan>
 
-<!-- O -->
-<tspan id="letter_o" x="160" y="408">  █████╗░</tspan>
-<tspan id="letter_o" x="160" y="429"> ██╔══██╗</tspan>
-<tspan id="letter_o" x="160" y="450"> ██║░░██║</tspan>
-<tspan id="letter_o" x="160" y="471"> ██║░░██║</tspan>
-<tspan id="letter_o" x="160" y="492"> ╚█████╔╝</tspan>
-<tspan id="letter_o" x="160" y="513"> ░╚════╝░</tspan>
+<tspan id="lo_part" x="110" y="290"> ██╗░░░░░  █████╗░</tspan>
+<tspan id="lo_part" x="110" y="311"> ██║░░░░░ ██╔══██╗</tspan>
+<tspan id="lo_part" x="110" y="332"> ██║░░░░░ ██║░░██║</tspan>
+<tspan id="lo_part" x="110" y="353"> ██║░░░░░ ██║░░██║</tspan>
+<tspan id="lo_part" x="110" y="374"> ███████╗ ╚█████╔╝</tspan>
+<tspan id="lo_part" x="110" y="395"> ╚══════╝  ╚════╝░</tspan>
 </text>
-
 <text x="400" y="30" fill="#c9d1d9">
 <tspan x="400" y="30">salko-ua</tspan> -———————————————————————————————————————————-—-
 
@@ -95,7 +86,7 @@
 
 <tspan x="400" y="270" class="cc">. </tspan><tspan class="key">Hobbies</tspan>.<tspan class="key">Games</tspan>:<tspan class="cc"> ................... </tspan><tspan class="value">Collecting games</tspan>
 
-<tspan x="400" y="310">- Contact</tspan> -——————————————————————————————————————————————-—-
+<tspan x="400" y="310">- Contact</tspan> -——————————————————————————————————————————-—-
 
 <tspan x="400" y="330" class="cc">. </tspan><tspan class="key">Email</tspan>.<tspan class="key">Gmail</tspan>:<tspan class="cc"> ........... </tspan><tspan class="value">salo.lard.tocino@gmail.com</tspan>
 
@@ -107,12 +98,14 @@
 
 <tspan x="400" y="410" class="cc">. </tspan><tspan class="key">Social</tspan>.<tspan class="key">Discord</tspan>:<tspan class="cc"> ........................... </tspan><tspan class="value">salkoua</tspan>
 
-<tspan x="400" y="450">- GitHub Stats</tspan> -—————————————————————————————————————————-—-
+<tspan x="400" y="450">- GitHub Stats</tspan> -—————————————————————————————————————-—-
 
-<tspan x="400" y="470" class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc"> ................ </tspan><tspan class="value" id="repo_data">62</tspan> |<tspan class="key">Stars</tspan>:<tspan class="cc"> ............. </tspan><tspan class="value" id="star_data">No data</tspan>
+<tspan x="400" y="470" class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc"> ................ </tspan><tspan class="value" id="repo_data">62</tspan> |<tspan class="key">Stars</tspan>:<tspan class="cc"> ............. </tspan><tspan class="value" id="star_data">7</tspan>
 
 <tspan x="400" y="490" class="cc">. </tspan><tspan class="key">Commits</tspan>:<tspan class="cc"> ........... </tspan><tspan class="value" id="contrib_data">1,701</tspan> |<tspan class="key">Followers</tspan>:<tspan class="cc"> ......... </tspan><tspan class="value" id="follower_data">7</tspan>
 
 <tspan x="400" y="510" class="cc">. </tspan><tspan class="key">Lines</tspan>:<tspan class="cc"> ....... </tspan><tspan class="value" id="loc_data">131,086</tspan> (<tspan class="addColor" id="loc_add">216,506</tspan><tspan class="addColor">++</tspan>,<tspan> .... </tspan><tspan class="delColor" id="loc_del">85,420</tspan><tspan class="delColor">--</tspan> )
+
+<tspan x="400" y="530">-————————————————————————————————————————————————————-—-</tspan> 
 </text>
 </svg>
