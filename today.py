@@ -17,6 +17,8 @@ class Stats:
         self.token = os.environ["ACCESS_TOKEN"]
         self.headers = {"authorization": "token " + self.token}
         self.user_id = self.get_viewer_id()
+        self.cache_filename = "cache.json"
+        self.username = "salko-ua"
 
         # MAIN
         self.os = "Linux (NixOS 25.05)"
@@ -72,6 +74,7 @@ class Stats:
         items = []
 
         while True:
+            print("run")
             response = requests.post(
                 "https://api.github.com/graphql",
                 json={"query": query, "variables": variables},
@@ -112,9 +115,9 @@ class Stats:
         """
         return "s" if unit != 1 else ""
 
-    def get_all_repositories(self):
+    def update_all_repositories(self):
         query = """
-        query ($first: Int, $cursor: String, $owner_affiliation: [RepositoryAffiliation]!, $author_id: ID!) {
+        query ($first: Int, $cursor: String, $owner_affiliation: [RepositoryAffiliation]!) {
             viewer {
                 repositories(first: $first, after: $cursor, ownerAffiliations: $owner_affiliation) {
                     pageInfo {
@@ -124,22 +127,28 @@ class Stats:
                     nodes {
                         id
                         name
-                        owner {
-                            login
-                        }
-                        diskUsage
-                        isArchived
-                        isDisabled
-                        isEmpty
-                        isFork
-                        isInOrganization
-                        isPrivate
                         stargazerCount
-                        object(expression: "HEAD") {
-                            ... on Commit {
-                                history(author: { id: $author_id }) {
-                                    totalCount
-                                }
+                    }
+                }
+            }
+        }
+        """
+        variables = {"owner_affiliation": self.scope}
+        result = self.fetch_all_pages(query=query, variables=variables, page_size=100)
+
+        self.update_cache_with_stats(result)
+
+    def get_commit_stats(self, repo_id):
+        query = """
+        query($repo_id: ID!, $author_id: ID!, $cursor: String) {
+            node(id: $repo_id) {
+                ... on Repository {
+                    object(expression: "HEAD") {
+                        ... on Commit {
+                            history(author: {id: $author_id}, first: 100, after: $cursor) {
+                                totalCount
+                                pageInfo { hasNextPage endCursor }
+                                nodes { additions deletions }
                             }
                         }
                     }
@@ -147,124 +156,53 @@ class Stats:
             }
         }
         """
-        variables = {"owner_affiliation": self.scope, "author_id": self.user_id}
-        result = self.fetch_all_pages(query=query, variables=variables, page_size=100)
-        self.print_commit_stats(result)
-        # pprint(result)
+        all_history = self.fetch_all_pages(
+            query, {"repo_id": repo_id, "author_id": self.user_id}
+        )
 
-    def print_commit_stats(self, repos: list):
-        stats = [
-            (
-                f"{r['owner']['login']}/{r['name']}",
-                r["object"]["history"]["totalCount"] if r["object"] else 0,
-            )
-            for r in repos
-        ]
+        # Summing stats across all paginated commit nodes
+        total_additions = sum(node["additions"] for node in all_history if node)
+        total_deletions = sum(node["deletions"] for node in all_history if node)
 
-        s = 0
-        g = 0
-        for name, count in sorted(stats, key=lambda x: x[1], reverse=True):
-            print(f"{count:>8,}  {name}")
-            s += count
-            g += 1
-        print(s, g)
-
-    def get_all_data(self):
-        all_repos = []
-        has_next_page = True
-        cursor = None
-
-        query = """
-        query ($owner_affiliation: [RepositoryAffiliation]!, $emails: [String!], $after: [String!]) {
-        viewer {
-            repositories(first: 10, owneraffiliations: $owner_affiliation, after: $after) {
-            pageInfo {
-                hasNextPage
-                endCursor
-            }
-            nodes {
-                id
-                nameWithOwner
-                stargazerCount
-                defaultBranchRef {
-                target {
-                    ... on Commit {
-                    history(author: {emails: $emails}, first: 100) {
-                        totalCount
-                        nodes {
-                        additions
-                        deletions
-                        }
-                    }
-                    }
-                }
-                }
-            }
-            }
+        return {
+            "total_commits": len(all_history),
+            "additions": total_additions,
+            "deletions": total_deletions,
         }
-        }
-        """
 
-        while has_next_page:
-            variables = {
-                "owner_affiliation": ["OWNER", "COLLABORATOR", "ORGANIZATION_MEMBER"],
-                "emails": [
-                    "github@salko-ua.de",
-                    "st21c8@vvpc.com.ua",
-                    "chips69jamil69game@gmail.com",
-                ],
-                "after": cursor,
+    def update_cache_with_stats(self, repo_results):
+        cache = {}
+
+        a, b, c, d = [0, 0, 0, 0]
+        for node in repo_results:
+            repo_id = node["id"]
+            stats = self.get_commit_stats(repo_id)
+
+            hashed_name = hashlib.sha256(repo_id.encode()).hexdigest()[:12]
+            cache[hashed_name] = {
+                "commits": stats["total_commits"],
+                "stars": node["stargazerCount"],
+                "additions": stats["additions"],
+                "deletions": stats["deletions"],
             }
+            a += stats["total_commits"]
+            b += node["stargazerCount"]
+            c += stats["additions"]
+            d += stats["deletions"]
 
-            response = requests.post(
-                "https://api.github.com/graphql",
-                json={"query": query, "variables": variables},
-                headers=self.headers,
-            ).json()
+        print(a, b, c, d)
 
-            if "errors" in response:
-                print(f"Error: {response['errors']}")
-                break
-
-            repo_data = response["data"]["viewer"]["repositories"]
-            all_repos.extend(repo_data["nodes"])
-
-            page_info = repo_data["pageInfo"]
-            has_next_page = page_info["hasNextPage"]
-            cursor = page_info["endCursor"]
-
-        return all_repos
-
-    def get_cached_data(self):
-        cache_file = "repo_cache.json"
-        cache = json.load(open(cache_file)) if os.path.exists(cache_file) else {}
-
-        fresh_nodes = self.get_all_data()
-
-        for node in fresh_nodes:
-            hashed_name = hashlib.sha256(node["id"].encode()).hexdigest()[:12]
-
-            ref = node.get("defaultBranchRef")
-            if ref:
-                hist = ref["target"]["history"]
-                cache[hashed_name] = {
-                    "commits": hist["totalCount"],
-                    "additions": sum(c["additions"] for c in hist["nodes"]),
-                    "deletions": sum(c["deletions"] for c in hist["nodes"]),
-                }
-
-        with open(cache_file, "w") as f:
+        with open(self.cache_filename, "w") as f:
             json.dump(cache, f, indent=4)
-        return cache
 
     def svg_overwrite(
         self,
         filename,
-        age_data,
-        star_data,
-        repo_data,
-        contrib_data,
-        follower_data,
+        uptime,
+        stars,
+        repos,
+        commits,
+        followers,
         loc_data,
     ):
         """
@@ -272,14 +210,14 @@ class Stats:
         """
         tree = etree.parse(filename)  # type: ignore
         root = tree.getroot()
-        self.justify_format(root, "age_data", age_data, 0)
-        self.justify_format(root, "star_data", star_data, 0)
-        self.justify_format(root, "repo_data", repo_data, 0)
-        self.justify_format(root, "contrib_data", contrib_data, 0)
-        self.justify_format(root, "follower_data", follower_data, 0)
-        self.justify_format(root, "loc_data", loc_data[2], 0)
-        self.justify_format(root, "loc_add", loc_data[0], 0)
-        self.justify_format(root, "loc_del", loc_data[1], 0)
+        self.justify_format(root, "uptime", uptime, 0)
+        self.justify_format(root, "stars", stars, 0)
+        self.justify_format(root, "repos", repos, 0)
+        self.justify_format(root, "commits", commits, 0)
+        self.justify_format(root, "followers", followers, 0)
+        self.justify_format(root, "lines", loc_data[2], 0)
+        self.justify_format(root, "added", loc_data[0], 0)
+        self.justify_format(root, "deleted", loc_data[1], 0)
         tree.write(filename, encoding="utf-8", xml_declaration=True)
 
     def justify_format(self, root, element_id, new_text, length=0):
@@ -326,47 +264,52 @@ class Stats:
         )
         return int(request.json()["data"]["user"]["followers"]["totalCount"])
 
+    def get_cached_data(self):
+        self.update_all_repositories()
 
-#
-# def main():
-#     stats_obj = Stats()
-#     age_data = stats_obj.get_age()
-#     cache_data = stats_obj.get_cached_data()
-#
-#     total_commits = 0
-#     total_add = 0
-#     total_del = 0
-#
-#     for name, info in cache_data.items():
-#         # print(f"{name}: +{info['additions']}, -{info['deletions']}, commits: {info['commits']}")
-#         total_commits += info["commits"]
-#         total_add += info["additions"]
-#         total_del += info["deletions"]
-#
-#     commit_data = total_commits
-#     star_data = "7"
-#     repo_data = len(cache_data)
-#     follower_data = stats_obj.follower_getter()
-#
-#     total_loc = [total_add, total_del, total_add - total_del, True]
-#
-#     for index in range(len(total_loc) - 1):
-#         total_loc[index] = "{:,}".format(total_loc[index])
-#
-#     stats_obj.svg_overwrite(
-#         "dark_mode.svg",
-#         age_data,
-#         star_data,
-#         repo_data,
-#         commit_data,
-#         follower_data,
-#         total_loc[:-1],
-#     )
+        cache = (
+            json.load(open(self.cache_filename))
+            if os.path.exists(self.cache_filename)
+            else {}
+        )
+        return cache
 
 
 def main():
     stats_obj = Stats()
-    stats_obj.get_all_repositories()
+    uptime = stats_obj.get_age()
+    cache_data = stats_obj.get_cached_data()
+
+    commits = 0
+    added = 0
+    deleted = 0
+
+    for name, info in cache_data.items():
+        print(
+            f"{name}: +{info['additions']}, -{info['deletions']}, commits: {info['commits']}"
+        )
+        commits += info["commits"]
+        added += info["additions"]
+        deleted += info["deletions"]
+
+    stars = "7"
+    repos = len(cache_data)
+    followers = stats_obj.follower_getter()
+
+    total_loc = [added, deleted, added - deleted]
+
+    for index in range(len(total_loc) - 1):
+        total_loc[index] = "{:,}".format(total_loc[index])
+
+    stats_obj.svg_overwrite(
+        filename="dark_mode.svg",
+        uptime=uptime,
+        stars=stars,
+        repos=repos,
+        commits=commits,
+        followers=followers,
+        loc_data=total_loc,
+    )
 
 
 main()
