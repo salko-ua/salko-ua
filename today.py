@@ -3,7 +3,6 @@ import json
 import hashlib
 import requests
 from lxml import etree
-from pprint import pprint
 from dotenv import load_dotenv
 
 from datetime import datetime as dt
@@ -74,7 +73,6 @@ class Stats:
         items = []
 
         while True:
-            print("run")
             response = requests.post(
                 "https://api.github.com/graphql",
                 json={"query": query, "variables": variables},
@@ -171,7 +169,11 @@ class Stats:
         }
 
     def update_cache_with_stats(self, repo_results):
-        cache = {}
+        cache = (
+            json.load(open(self.cache_filename))
+            if os.path.exists(self.cache_filename)
+            else {}
+        )
 
         a, b, c, d = [0, 0, 0, 0]
         for node in repo_results:
@@ -285,9 +287,6 @@ def main():
     deleted = 0
 
     for name, info in cache_data.items():
-        print(
-            f"{name}: +{info['additions']}, -{info['deletions']}, commits: {info['commits']}"
-        )
         commits += info["commits"]
         added += info["additions"]
         deleted += info["deletions"]
@@ -312,4 +311,5 @@ def main():
     )
 
 
-main()
+if __name__ == "__main__":
+    main()
