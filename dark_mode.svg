@@ -52,87 +52,35 @@
   </text>
 
   <text x="350" y="30" fill="#c9d1d9">
-    <tspan x="350" y="30" id="v_user"></tspan> <tspan id="h_main"></tspan>
-    
-    <tspan x="350" y="50" class="cc">. </tspan><tspan id="k_os" class="key"></tspan><tspan id="d_os" class="cc"></tspan><tspan id="v_os" class="value"></tspan>
-    <tspan x="350" y="70" class="cc">. </tspan><tspan id="k_up" class="key"></tspan><tspan id="d_up" class="cc"></tspan><tspan id="v_up" class="value"></tspan>
-    <tspan x="350" y="90" class="cc">. </tspan><tspan id="k_ho" class="key"></tspan><tspan id="d_ho" class="cc"></tspan><tspan id="v_ho" class="value"></tspan>
-    <tspan x="350" y="110" class="cc">. </tspan><tspan id="k_ke" class="key"></tspan><tspan id="d_ke" class="cc"></tspan><tspan id="v_ke" class="value"></tspan>
-    <tspan x="350" y="130" class="cc">. </tspan><tspan id="k_ide" class="key"></tspan><tspan id="d_ide" class="cc"></tspan><tspan id="v_ide" class="value"></tspan>
+    <tspan x="350" y="30">salko-ua</tspan> -—————————————————————————————————————————————————-—-
 
-    <tspan x="350" y="170" class="cc">. </tspan><tspan id="k_pr" class="key"></tspan><tspan id="d_pr" class="cc"></tspan><tspan id="v_pr" class="value"></tspan>
-    <tspan x="350" y="190" class="cc">. </tspan><tspan id="k_co" class="key"></tspan><tspan id="d_co" class="cc"></tspan><tspan id="v_co" class="value"></tspan>
-    <tspan x="350" y="210" class="cc">. </tspan><tspan id="k_ma" class="key"></tspan><tspan id="d_ma" class="cc"></tspan><tspan id="v_ma" class="value"></tspan>
-    <tspan x="350" y="230" class="cc">. </tspan><tspan id="k_ad" class="key"></tspan><tspan id="d_ad" class="cc"></tspan><tspan id="v_ad" class="value"></tspan>
-    <tspan x="350" y="250" class="cc">. </tspan><tspan id="k_sw" class="key"></tspan><tspan id="d_sw" class="cc"></tspan><tspan id="v_sw" class="value"></tspan>
-    <tspan x="350" y="270" class="cc">. </tspan><tspan id="k_ga" class="key"></tspan><tspan id="d_ga" class="cc"></tspan><tspan id="v_ga" class="value"></tspan>
+    <tspan x="350" y="50" class="cc">. </tspan><tspan class="key">Os</tspan><tspan class="cc">: ......................... </tspan><tspan class="value">Linux (nixos 25.11), pixel 6</tspan>
+    <tspan x="350" y="70" class="cc">. </tspan><tspan class="key">Uptime</tspan><tspan class="cc">: ...................... </tspan><tspan class="value">19 years, 11 months, 4 days</tspan>
+    <tspan x="350" y="90" class="cc">. </tspan><tspan class="key">Host</tspan><tspan class="cc">: .................................... </tspan><tspan class="value">Europe, Ukraine</tspan>
+    <tspan x="350" y="110" class="cc">. </tspan><tspan class="key">Kernel</tspan><tspan class="cc">: ..................................... </tspan><tspan class="value">Volyn, Lutsk</tspan>
+    <tspan x="350" y="130" class="cc">. </tspan><tspan class="key">IDE</tspan><tspan class="cc">: ................................... </tspan><tspan class="value">Lazy nvim v0.11.2</tspan>
 
-    <tspan x="350" y="310" id="h_con"></tspan> <tspan id="h_con_line"></tspan>
-    <tspan x="350" y="330" class="cc">. </tspan><tspan id="k_gm" class="key"></tspan><tspan id="d_gm" class="cc"></tspan><tspan id="v_gm" class="value"></tspan>
-    <tspan x="350" y="350" class="cc">. </tspan><tspan id="k_me" class="key"></tspan><tspan id="d_me" class="cc"></tspan><tspan id="v_me" class="value"></tspan>
-    <tspan x="350" y="370" class="cc">. </tspan><tspan id="k_wo" class="key"></tspan><tspan id="d_wo" class="cc"></tspan><tspan id="v_wo" class="value"></tspan>
-    <tspan x="350" y="390" class="cc">. </tspan><tspan id="k_si" class="key"></tspan><tspan id="d_si" class="cc"></tspan><tspan id="v_si" class="value"></tspan>
-    <tspan x="350" y="410" class="cc">. </tspan><tspan id="k_di" class="key"></tspan><tspan id="d_di" class="cc"></tspan><tspan id="v_di" class="value"></tspan>
+    <tspan x="350" y="170" class="cc">. </tspan><tspan class="key">Langs.Programming</tspan><tspan class="cc">: .................... </tspan><tspan class="value">Python, JavaScript</tspan>
+    <tspan x="350" y="190" class="cc">. </tspan><tspan class="key">Langs.Computer</tspan><tspan class="cc">: .................... </tspan><tspan class="value">HTML, CSS, JSON, YAML</tspan>
+    <tspan x="350" y="210" class="cc">. </tspan><tspan class="key">Languages.Main</tspan><tspan class="cc">: ........... </tspan><tspan class="value">Ukrainian(Native), English(B2)</tspan>
+    <tspan x="350" y="230" class="cc">. </tspan><tspan class="key">languages.Additional</tspan><tspan class="cc">: ....................... </tspan><tspan class="value">Japanese(n5)</tspan>
+    <tspan x="350" y="250" class="cc">. </tspan><tspan class="key">Hobbies.Software</tspan><tspan class="cc">: ................... </tspan><tspan class="value">Private pet projects</tspan>
+    <tspan x="350" y="270" class="cc">. </tspan><tspan class="key">Hobbies.Games</tspan><tspan class="cc">: .......................... </tspan><tspan class="value">Collecting games</tspan>
 
-    <tspan x="350" y="450" id="h_git"></tspan> <tspan id="h_git_line"></tspan>
-    <tspan x="350" y="470" class="cc">. </tspan><tspan id="k_re" class="key"></tspan><tspan id="d_re" class="cc"></tspan><tspan id="v_re" class="value"></tspan><tspan class="cc"> | </tspan><tspan id="k_st" class="key"></tspan><tspan id="d_st" class="cc"></tspan><tspan id="v_st" class="value"></tspan>
-    <tspan x="350" y="490" class="cc">. </tspan><tspan id="k_cm" class="key"></tspan><tspan id="d_cm" class="cc"></tspan><tspan id="v_cm" class="value"></tspan><tspan class="cc"> | </tspan><tspan id="k_fo" class="key"></tspan><tspan id="d_fo" class="cc"></tspan><tspan id="v_fo" class="value"></tspan>
-    <tspan x="350" y="510" class="cc">. </tspan><tspan id="k_li" class="key"></tspan><tspan id="d_li" class="cc"></tspan><tspan id="v_li" class="value"></tspan><tspan class="cc"> | (</tspan><tspan id="v_la" class="addColor"></tspan><tspan class="addColor">++</tspan><tspan class="cc">,</tspan> <tspan id="v_ld" class="delColor"></tspan><tspan class="delColor">--</tspan><tspan class="cc">)</tspan>
-    
-    <tspan x="350" y="530" id="h_footer"></tspan>
+    <tspan x="350" y="310">- contact</tspan> -————————————————————————————————————————————————-—-
+
+    <tspan x="350" y="330" class="cc">. </tspan><tspan class="key">Email.Gmail</tspan><tspan class="cc">: .................. </tspan><tspan class="value">salo.lard.tocino@gmail.com</tspan>
+    <tspan x="350" y="350" class="cc">. </tspan><tspan class="key">Email.Me</tspan><tspan class="cc">: ................................. </tspan><tspan class="value">me@salko-ua.de</tspan>
+    <tspan x="350" y="370" class="cc">. </tspan><tspan class="key">Email.Work</tspan><tspan class="cc">: ............................. </tspan><tspan class="value">work@salko-ua.de</tspan>
+    <tspan x="350" y="390" class="cc">. </tspan><tspan class="key">Social.Site</tspan><tspan class="cc">: ................................. </tspan><tspan class="value">salko-ua.de</tspan>
+    <tspan x="350" y="410" class="cc">. </tspan><tspan class="key">Social.Discord</tspan><tspan class="cc">: .................................. </tspan><tspan class="value">salkoua</tspan>
+
+    <tspan x="350" y="450">- github stats</tspan> -———————————————————————————————————————————-—-
+
+    <tspan x="350" y="470" class="cc">. </tspan><tspan class="key">Repos</tspan><tspan class="cc">: ................. </tspan><tspan class="value">62</tspan> | <tspan class="key">Stars</tspan><tspan class="cc">: .................. </tspan><tspan class="value">7</tspan>
+    <tspan x="350" y="490" class="cc">. </tspan><tspan class="key">Commits</tspan><tspan class="cc">: ............ </tspan><tspan class="value">1,701</tspan> | <tspan class="key">Followers</tspan><tspan class="cc">: .............. </tspan><tspan class="value">7</tspan>
+    <tspan x="350" y="510" class="cc">. </tspan><tspan class="key">Lines</tspan><tspan class="cc">: ............ </tspan><tspan class="value">131,086</tspan> | (<tspan class="addColor">216,506++</tspan>, <tspan class="delColor">85,420--</tspan>)
+
+    <tspan x="350" y="530">-——————————————————————————————————————————————————————————-—-</tspan> 
   </text>
-
-  <script>
-    <![CDATA[
-      const d = {
-        user: "salko-ua",
-        h_main: "-—————————————————————————————————————————————————-—-",
-        h_con: "- contact",
-        h_con_l: "-————————————————————————————————————————————————-—-",
-        h_git: "- github stats",
-        h_git_l: "-———————————————————————————————————————————-—-",
-        h_foot: "-——————————————————————————————————————————————————————————-—-",
-        
-        os: ["Os", ": ......................... ", "Linux (nixos 25.11), pixel 6"],
-        up: ["Uptime", ": ...................... ", "19 years, 11 months, 4 days"],
-        ho: ["Host", ": .................................... ", "Europe, Ukraine"],
-        ke: ["Kernel", ": ..................................... ", "Volyn, Lutsk"],
-        ide: ["IDE", ": ................................... ", "Lazy nvim v0.11.2"],
-        
-        pr: ["Langs.Programming", ": .................... ", "Python, JavaScript"],
-        co: ["Langs.Computer", ": .................... ", "HTML, CSS, JSON, YAML"],
-        ma: ["Languages.Main", ": ........... ", "Ukrainian(Native), English(B2)"],
-        ad: ["languages.Additional", ": ....................... ", "Japanese(n5)"],
-        sw: ["Hobbies.Software", ": ................... ", "Private pet projects"],
-        ga: ["Hobbies.Games", ": .......................... ", "Collecting games"],
-        
-        gm: ["Email.Gmail", ": .................. ", "salo.lard.tocino@gmail.com"],
-        me: ["Email.Me", ": ................................. ", "me@salko-ua.de"],
-        wo: ["Email.Work", ": ............................. ", "work@salko-ua.de"],
-        si: ["Social.Site", ": ................................. ", "salko-ua.de"],
-        di: ["Social.Discord", ": .................................. ", "salkoua"],
-        
-        re: ["Repos", ": ................. ", "62"],
-        st: ["Stars", ": .................. ", "7"],
-        cm: ["Commits", ": ............ ", "1,701"],
-        fo: ["Followers", ": .............. ", "7"],
-        li: ["Lines", ": ............ ", "131,086"],
-        la: "216,506",
-        ld: "85,420"
-      };
-
-      const set = (id, txt) => { const el = document.getElementById(id); if(el) el.textContent = txt; };
-
-      set('v_user', d.user); set('h_main', d.h_main);
-      set('h_con', d.h_con); set('h_con_line', d.h_con_l);
-      set('h_git', d.h_git); set('h_git_line', d.h_git_l);
-      set('h_footer', d.h_foot);
-
-      [['os',d.os],['up',d.up],['ho',d.ho],['ke',d.ke],['ide',d.ide],['pr',d.pr],['co',d.co],['ma',d.ma],['ad',d.ad],['sw',d.sw],['ga',d.ga],['gm',d.gm],['me',d.me],['wo',d.wo],['si',d.si],['di',d.di],['re',d.re],['st',d.st],['cm',d.cm],['fo',d.fo],['li',d.li]].forEach(x => {
-        set('k_'+x[0], x[1][0]); set('d_'+x[0], x[1][1]); set('v_'+x[0], x[1][2]);
-      });
-
-      set('v_la', d.la); set('v_ld', d.ld);
-    ]]>
-  </script>
 </svg>
