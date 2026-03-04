@@ -34,7 +34,7 @@
     </linearGradient>
   </defs>
 
-  <rect width="985px" height="550px" fill="#161b22" rx="15"/>
+  <rect width="985px" height="550px" fill="#000000" rx="15"/>
 
   <text x="80" y="150" fill="#c9d1d9" class="ascii">
     <tspan id="sa_part" x="80" y="150"> ░██████╗  █████╗░</tspan>
