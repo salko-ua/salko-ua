@@ -285,13 +285,14 @@ def main():
     commits = 0
     added = 0
     deleted = 0
+    stars = 0
 
     for name, info in cache_data.items():
+        stars += info["stars"]
         commits += info["commits"]
         added += info["additions"]
         deleted += info["deletions"]
 
-    stars = "7"
     repos = len(cache_data)
     followers = stats_obj.follower_getter()
 
@@ -313,3 +314,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
