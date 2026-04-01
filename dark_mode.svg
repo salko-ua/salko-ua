@@ -55,7 +55,7 @@
     <tspan x="350" y="30">salko-ua</tspan> -—————————————————————————————————————————————————-—-
 
     <tspan x="350" y="50" class="cc">. </tspan><tspan class="key">Os</tspan><tspan class="cc">: ......................... </tspan><tspan id="os" class="value">Linux (nixos 25.11), pixel 6</tspan>
-    <tspan x="350" y="70" class="cc">. </tspan><tspan class="key">Uptime</tspan><tspan class="cc">: ...................... </tspan><tspan id="uptime" class="value">20 years, 0 months, 4 days</tspan>
+    <tspan x="350" y="70" class="cc">. </tspan><tspan class="key">Uptime</tspan><tspan class="cc">: ...................... </tspan><tspan id="uptime" class="value">20 years, 0 months, 5 days</tspan>
     <tspan x="350" y="90" class="cc">. </tspan><tspan class="key">Host</tspan><tspan class="cc">: .................................... </tspan><tspan id="host" class="value">Europe, Ukraine</tspan>
     <tspan x="350" y="110" class="cc">. </tspan><tspan class="key">Kernel</tspan><tspan class="cc">: ..................................... </tspan><tspan id="kernel" class="value">Volyn, Lutsk</tspan>
     <tspan x="350" y="130" class="cc">. </tspan><tspan class="key">IDE</tspan><tspan class="cc">: ................................... </tspan><tspan id="ide" class="value">Lazy nvim v0.11.2</tspan>
