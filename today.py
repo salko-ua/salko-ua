@@ -15,6 +15,8 @@ class Stats:
     def __init__(self) -> None:
         self.token = os.environ["ACCESS_TOKEN"]
         self.headers = {"authorization": "token " + self.token}
+        self.validate_token()
+
         self.user_id = self.get_viewer_id()
         self.cache_filename = "cache.json"
         self.username = "salko-ua"
@@ -34,6 +36,30 @@ class Stats:
         self.other = "HTML, CSS, JSON, MARKDOWN"
 
         self.scope = ["OWNER", "COLLABORATOR", "ORGANIZATION_MEMBER"]
+
+    def validate_token(self) -> None:
+        """
+        Checks if the GitHub token is valid by making a simple API call.
+        Returns True if valid, False otherwise.
+        """
+        query = """
+        query {
+            viewer {
+                login
+            }
+        }
+        """
+
+        response = requests.post(
+            "https://api.github.com/graphql",
+            json={"query": query},
+            headers=self.headers,
+        )
+
+        data = response.json()
+        if data.get("status", 200) != 200:
+            print(f"Bad credentials {data}")
+            raise Exception
 
     def get_viewer_id(self) -> str:
         query = """
@@ -314,4 +340,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
