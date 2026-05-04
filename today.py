@@ -313,7 +313,7 @@ def main():
     deleted = 0
     stars = 0
 
-    for name, info in cache_data.items():
+    for _, info in cache_data.items():
         stars += info["stars"]
         commits += info["commits"]
         added += info["additions"]
@@ -327,15 +327,16 @@ def main():
     for index in range(len(total_loc) - 1):
         total_loc[index] = "{:,}".format(total_loc[index])
 
-    stats_obj.svg_overwrite(
-        filename="dark_mode.svg",
-        uptime=uptime,
-        stars=stars,
-        repos=repos,
-        commits=commits,
-        followers=followers,
-        loc_data=total_loc,
-    )
+    for svg in ["dark_mode.svg", "vertical.svg"]:
+        stats_obj.svg_overwrite(
+            filename=svg,
+            uptime=uptime,
+            stars=stars,
+            repos=repos,
+            commits=commits,
+            followers=followers,
+            loc_data=total_loc,
+        )
 
 
 if __name__ == "__main__":

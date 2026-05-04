@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,monospace" width="700px" height="550px" font-size="18px">
+  <style>
+    @font-face {
+      src: local('Consolas'), local('Consolas Bold');
+      font-family: 'ConsolasFallback';
+      font-display: swap;
+    }
+    .ascii { font-family: 'ConsolasFallback', monospace; font-size: 18px; white-space: pre; }
+    .key { fill: #ff7b72; font-family: 'ConsolasFallback', monospace; font-size: 18px; }
+    .value { fill: #a5d6ff; font-family: 'ConsolasFallback', monospace; font-size: 18px; }
+    .cc { fill: #6e7681; font-family: 'ConsolasFallback', monospace; font-size: 18px; }
+    .addColor { fill: #3fb950; }
+    .delColor { fill: #f85149; } 
+
+    #sa_part { fill: url(#grad-blue); filter: drop-shadow(0 0 5px rgba(0, 100, 255, 0.5)); }
+    #lo_part { fill: url(#grad-yellow); filter: drop-shadow(0 0 5px rgba(255, 200, 0, 0.5)); }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) scale(1); opacity: 0.4; }
+      50% { transform: translateY(-5px) scale(1.2); opacity: 0.8; }
+    }
+    .particle { animation: float 3s infinite ease-in-out; }
+  </style>
+
+  <defs>
+    <linearGradient id="grad-blue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#58a6ff;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0044ff;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="grad-yellow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f2cc60;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#ffcc00;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="985px" height="550px" fill="#000000" fill-opacity="0.6"/>
+
+
+
+  <text x="10" y="30" fill="#c9d1d9">
+    <tspan x="10" y="30">- salo </tspan> -———————————————————————————————————————————————————-—-
+
+    <tspan x="10" y="50" class="cc">. </tspan><tspan class="key">OS</tspan><tspan class="cc">: ......................... </tspan><tspan id="os" class="value">Linux (nixos 25.11), pixel 6</tspan>
+    <tspan x="10" y="70" class="cc">. </tspan><tspan class="key">Uptime</tspan><tspan class="cc">: ...................... </tspan><tspan id="uptime" class="value">20 years, 1 month, 7 days</tspan>
+    <tspan x="10" y="90" class="cc">. </tspan><tspan class="key">Host</tspan><tspan class="cc">: .................................... </tspan><tspan id="host" class="value">Europe, Ukraine</tspan>
+    <tspan x="10" y="110" class="cc">. </tspan><tspan class="key">Kernel</tspan><tspan class="cc">: ..................................... </tspan><tspan id="kernel" class="value">Volyn, Lutsk</tspan>
+    <tspan x="10" y="130" class="cc">. </tspan><tspan class="key">IDE</tspan><tspan class="cc">: ................................... </tspan><tspan id="ide" class="value">Lazy nvim v0.11.2</tspan>
+
+    <tspan x="10" y="170" class="cc">. </tspan><tspan class="key">Langs.Programming</tspan><tspan class="cc">: .................... </tspan><tspan id="langs.programming" class="value">Python, JavaScript</tspan>
+    <tspan x="10" y="190" class="cc">. </tspan><tspan class="key">Langs.Computer</tspan><tspan class="cc">: .................... </tspan><tspan id="langs.computer" class="value">HTML, CSS, JSON, YAML</tspan>
+    <tspan x="10" y="210" class="cc">. </tspan><tspan class="key">Languages.Main</tspan><tspan class="cc">: ........... </tspan><tspan id="langs.main" class="value">Ukrainian(Native), English(B2)</tspan>
+    <tspan x="10" y="230" class="cc">. </tspan><tspan class="key">languages.Additional</tspan><tspan class="cc">: ....................... </tspan><tspan id="langs.additional" class="value">Japanese(N5)</tspan>
+    <tspan x="10" y="250" class="cc">. </tspan><tspan class="key">Hobbies.Software</tspan><tspan class="cc">: ................... </tspan><tspan id="hobbies.software" class="value">Private pet projects</tspan>
+    <tspan x="10" y="270" class="cc">. </tspan><tspan class="key">Hobbies.Games</tspan><tspan class="cc">: .......................... </tspan><tspan id="hobbies.games" class="value">Collecting games</tspan>
+
+    <tspan x="10" y="310">- contact</tspan> -————————————————————————————————————————————————-—-
+
+    <tspan x="10" y="330" class="cc">. </tspan><tspan class="key">Email.Gmail</tspan><tspan class="cc">: .................. </tspan><tspan id="email.gmail" class="value">salo.lard.tocino@gmail.com</tspan>
+    <tspan x="10" y="350" class="cc">. </tspan><tspan class="key">Email.Me</tspan><tspan class="cc">: ................................. </tspan><tspan id="email.me" class="value">me@salko-ua.de</tspan>
+    <tspan x="10" y="370" class="cc">. </tspan><tspan class="key">Email.Work</tspan><tspan class="cc">: ............................. </tspan><tspan id="email.work" class="value">work@salko-ua.de</tspan>
+    <tspan x="10" y="390" class="cc">. </tspan><tspan class="key">Social.Site</tspan><tspan class="cc">: ................................. </tspan><tspan id="social.site" class="value">salko-ua.de</tspan>
+    <tspan x="10" y="410" class="cc">. </tspan><tspan class="key">Social.Discord</tspan><tspan class="cc">: .................................. </tspan><tspan id="social.discord" class="value">salkoua</tspan>
+
+    <tspan x="10" y="450">- github stats</tspan> -———————————————————————————————————————————-—-
+
+    <tspan x="10" y="470" class="cc">. </tspan><tspan class="key">Repos</tspan><tspan class="cc">: ................. </tspan><tspan id="repos" class="value">65</tspan> | <tspan class="key">Stars</tspan><tspan class="cc">: .................. </tspan><tspan id="stars" class="value">8</tspan>
+    <tspan x="10" y="490" class="cc">. </tspan><tspan class="key">Commits</tspan><tspan class="cc">: ............ </tspan><tspan id="commits" class="value">2,026</tspan> | <tspan class="key">Followers</tspan><tspan class="cc">: .............. </tspan><tspan id="followers" class="value">8</tspan>
+    <tspan x="10" y="510" class="cc">. </tspan><tspan class="key">Lines</tspan><tspan class="cc">: ............ </tspan><tspan id="lines" class="value">147,862</tspan> | (<tspan id="added" class="addColor">265,906</tspan>, <tspan id="deleted" class="delColor">118,044</tspan>)
+
+    <tspan x="10" y="530">-——————————————————————————————————————————————————————————-—-</tspan> 
+  </text>
+</svg>
