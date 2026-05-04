@@ -50,7 +50,7 @@
     <tspan x="10" y="170" class="cc">. </tspan><tspan class="key">Langs.Programming</tspan><tspan class="cc">: .................... </tspan><tspan id="langs.programming" class="value">Python, JavaScript</tspan>
     <tspan x="10" y="190" class="cc">. </tspan><tspan class="key">Langs.Computer</tspan><tspan class="cc">: .................... </tspan><tspan id="langs.computer" class="value">HTML, CSS, JSON, YAML</tspan>
     <tspan x="10" y="210" class="cc">. </tspan><tspan class="key">Languages.Main</tspan><tspan class="cc">: ........... </tspan><tspan id="langs.main" class="value">Ukrainian(Native), English(B2)</tspan>
-    <tspan x="10" y="230" class="cc">. </tspan><tspan class="key">languages.Additional</tspan><tspan class="cc">: ....................... </tspan><tspan id="langs.additional" class="value">Japanese(N5)</tspan>
+    <tspan x="10" y="230" class="cc">. </tspan><tspan class="key">Languages.Additional</tspan><tspan class="cc">: ....................... </tspan><tspan id="langs.additional" class="value">Japanese(N5)</tspan>
     <tspan x="10" y="250" class="cc">. </tspan><tspan class="key">Hobbies.Software</tspan><tspan class="cc">: ................... </tspan><tspan id="hobbies.software" class="value">Private pet projects</tspan>
     <tspan x="10" y="270" class="cc">. </tspan><tspan class="key">Hobbies.Games</tspan><tspan class="cc">: .......................... </tspan><tspan id="hobbies.games" class="value">Collecting games</tspan>
 
