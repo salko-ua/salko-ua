@@ -19,7 +19,7 @@ class Stats:
 
         self.user_id = self.get_viewer_id()
         self.cache_filename = "cache.json"
-        self.username = "salko-ua"
+        self.username = "throughere"
 
         # MAIN
         self.os = "Linux (NixOS 25.05)"
